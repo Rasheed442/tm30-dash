@@ -1,0 +1,98 @@
+.chart{
+    width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+.main{
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+.terminal{
+    background-color: white;
+    display: flex;
+    width: 10rem;
+    padding: 5px;
+    border: 10px;
+    flex-direction: column;
+    gap: 10px;
+}
+.terminal span{
+    color: gray;
+    font-size: 15px;
+}
+.terminal p{
+    font-weight: bold;
+    font-size: 20px;
+}
+.gridout{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    gap: 20px;
+}
+.chart1{
+    width: 300px;
+    display: flex;
+    gap: 40px;
+}
+.statistic{
+    display: flex;
+    justify-content: space-between;
+}
+.statistic p{
+    color: gray;
+    font-size: 14px;
+}
+.statistic select{
+    outline: none;
+    border: none;
+    color: gray;
+    font-size: 12px;
+}
+.flexout{
+    background-color: white;
+    width: 40rem;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+.blue{
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+}
+.orange{
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+}
+.green{
+    width: 10px;
+    height: 10px;
+    background-color: green;
+}
+.gray{
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+}
+
+.manager{
+    display: flex;
+    gap: 10px;
+}
+.manager p{
+    font-size: 13px;
+    width: 8rem;
+}
+.navigate{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    gap: 20px;
+}
+.divert{
+    display: flex;
+    padding: 30px;
+}

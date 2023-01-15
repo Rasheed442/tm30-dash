@@ -1,0 +1,142 @@
+.background{
+    display: flex;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.profile{
+    display: flex;
+    gap: 20px;
+}
+.reminder img{
+    position: relative;
+    margin-left: -8px;
+}
+.name span{
+    color: gray;
+    font-size: 15px
+}
+.line{
+    width: 2px;
+    height: 50px;
+    background-color: gainsboro;
+}
+.search input{
+    border: none;  
+     width: 30rem;
+     outline: none;
+     font-size: 15px;
+     padding: 10px;
+}
+.search{
+    border: 1px solid #00A4E4;
+    padding: 5px;
+    background-color: #F8FAFF;
+    border-radius: 20px;
+    height: 50px;
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+}
+.agent{
+    background-color: #E8EEFE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: #1B59F8;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.contain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid gainsboro;
+}
+
+.bg{
+    background-color: ghostwhite;
+    border-radius: 20px;
+    height: 90vh;
+}
+.head{
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+.head p{
+    background-color: #1B59F8;
+    color: white;
+    height: 40px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+.head span{
+    color: gray;
+    cursor: pointer;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.gridout{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.status{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: 200;
+}
+.status main{
+    color: gray;
+    font-size: 13px;
+}
+.statu{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.footer span{
+    color: #969494;
+    font-size: 13px;
+}
+.btn{
+    display: flex;
+    gap: 15px;
+}
+.btn button{
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #969494;
+}
+.btn1{
+    display: flex;
+    gap: 10px;
+}
+.btn1 button{
+ border: 1px solid gainsboro; 
+ background-color: transparent;
+ width: 30px;
+ cursor: pointer;
+ display: flex;
+ border-radius: 5px;
+ justify-content: center;
+} 

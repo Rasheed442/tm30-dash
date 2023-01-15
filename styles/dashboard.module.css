@@ -1,0 +1,88 @@
+.header{
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+}
+.bg{
+    background-color:ghostwhite;
+    border-radius: 10px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.profile{
+    display: flex;
+    gap: 20px;
+}
+.reminder img{
+    margin-left: -8px;
+}
+.name span{
+    color: gray;
+    font-size: 15px
+}
+.line{
+    width: 2px;
+    height: 50px;
+    background-color: gainsboro;
+}
+.search input{
+    border: none;  
+     width: 30rem;
+     outline: none;
+     font-size: 15px;
+     padding: 10px;
+}
+.search{
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 20px;
+    height: 50px;
+}
+.frame {
+     display: flex;
+     padding: 30px;
+     gap: 30px;
+}
+.frame select{
+    padding: 10px;
+    padding-right: 10rem;
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+}
+.gridout{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    justify-content: space-between;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+.transaction{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.transaction h5{
+    color: #909090;
+    font-size: 10px;
+    font-weight: 100;
+}
+.transaction h4{
+    font-size: 30px;
+    font-weight: 300;
+}
+.transaction p{
+    font-size: 12px;
+}
+.flex{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    justify-content: space-between;
+    grid-row-gap: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
