@@ -18,7 +18,9 @@
     font-size: 15px;
 }
 .transact h3{
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
 }
 .profile{
     display: flex;
@@ -58,13 +60,13 @@
     border-radius: 5px;
     cursor: pointer;
     color: #969494;
+    border: 1px solid gray;
 }
 .btn1{
     display: flex;
     gap: 10px;
 }
 .btn1 button{
- border: 1px solid gainsboro; 
  background-color: transparent;
  width: 30px;
  cursor: pointer;

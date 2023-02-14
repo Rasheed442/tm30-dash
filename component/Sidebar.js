@@ -1,79 +1,41 @@
 import React,{useState} from 'react'
-import style from "../styles/side.module.css"
+import style from "../styles/sidebar.module.css"
 import {RxDashboard} from "react-icons/rx"
-import {MdSupervisorAccount,MdLocalLaundryService,
-       MdOutlineExitToApp,MdMiscellaneousServices,MdHomeRepairService,
-       MdOutlineLocalLaundryService,MdReportGmailerrorred} from "react-icons/md"
+import {MdSupervisorAccount,MdOutlineExitToApp,MdMiscellaneousServices,MdContentCopy,MdReportGmailerrorred} from "react-icons/md"
 import {AiOutlineUser} from "react-icons/ai"
-import Link from "next/link"
-
-function Sidebar() {
+import Link from 'next/link'
+import Testing from '../component/Testing'
+function Sidebar({change}) {
   return (
  <div className={style.container}>
 
- <div className={style.header}>
-
-     <Link href="/"> <div className={style.dash1}>
-        <div></div>
-        <RxDashboard size={20}/>
-        <p>Dashboard</p>
-      </div></Link>
-
-    <Link href="account">  <div className={style.dash1}>
-        <div></div>
-        <MdSupervisorAccount size={20} />
-        <p>My Account</p>
-      </div></Link>
-
-       <Link href='agent'><div className={style.dash1}>
-        <div></div>
-        <AiOutlineUser size={20}/>
-        <p>Agent Management</p>
-      </div></Link>
-
-      <Link href="terminal"> <div className={style.dash1}>
-        <div></div>
-        <AiOutlineUser size={20} />
-        <p>Terminal Management</p>
-      </div></Link>
+     
+      <div className={style.header}>
+        <Testing/>
+        </div>
       
-      <Link href="new"> <div className={style.dash1}>
-        <div></div>
-        <MdHomeRepairService/>
-        <p>New Agents</p>
-      </div></Link>
 
-
-      <Link href="rental"> <div className={style.dash1}>
-        <div></div>
-        <MdLocalLaundryService/>
-        <p>Rental Service</p>
-      </div></Link>
-
-      <Link href="reporting"> <div className={style.dash1}>
-        <div></div>
-        <MdReportGmailerrorred size={20}/>
-        <p>Reporting</p>
-      </div></Link>
-
-      <Link href="settings"> <div className={style.dash1}>
-        <div></div>
-        <MdMiscellaneousServices size={20} />
-        <p>Settings</p>
-      </div></Link>
-
-
+<div>
+  <div className={style.exit1}>
+      <div className={style.profile}>
+      <h4>My Referral Code</h4>
+      <span>AGB23294812</span>
     </div>
+       <MdContentCopy size={30} style={{color:"#084074", cursor:"pointer"}}/>
+    </div>  
 
-  <div className={style.exit}>
+ <Link href="/"> <div className={style.exit}>
       <div className={style.profile}>
       <h4>Logout</h4>
-      <span>Super Agent</span>
+      <span>Agent Manager</span>
     </div>
        <MdOutlineExitToApp size={30} style={{color:"#FF3A3A", cursor:"pointer"}}/>
-    </div>  
+    </div> </Link>
+
+</div>
   
  </div>   
+
 
 
    

@@ -1,27 +1,76 @@
+.topp{
+    display: flex;
+}
 .header{
     width: 100vw;
     height: 100vh;
     overflow: scroll;
 }
+.icon{
+    display: none;
+}
 .bg{
     background-color:ghostwhite;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.frame{
+     display: grid;
+     grid-template-columns: repeat(4,1fr);
+     padding: 30px;
+     gap: 20px;
+}
+.frame select{
+    padding: 10px;
+    padding-right: 9rem;
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+    outline: none;
+    /* width: 13rem; */
+}
+
+.gridout{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    gap: 3rem;
+    padding: 10px;
 }
 .container{
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    align-items: center;
+}
+.container h1{
+    font-weight: 500;
 }
 .profile{
     display: flex;
     gap: 20px;
+    align-items: center;
 }
-.reminder img{
+.reminder div{
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 10px;
+    margin-left: -10px;
+}
+.reminder{
+    display: flex;
+}
+/* .reminder img{
     margin-left: -8px;
-}
+} */
+
 .name span{
     color: gray;
-    font-size: 15px
+    font-size: 12px
 }
 .line{
     width: 2px;
@@ -33,34 +82,14 @@
      width: 30rem;
      outline: none;
      font-size: 15px;
-     padding: 10px;
 }
 .search{
     border: 1px solid gray;
-    padding: 5px;
-    border-radius: 20px;
-    height: 50px;
-}
-.frame {
-     display: flex;
-     padding: 30px;
-     gap: 30px;
-}
-.frame select{
     padding: 10px;
-    padding-right: 10rem;
-    border: 1px solid gainsboro;
     border-radius: 20px;
+    height: 100%;
 }
-.gridout{
-    background-color: white;
-    width: 100%;
-    border-radius: 10px;
-    justify-content: space-between;
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-}
+
 .transaction{
     display: flex;
     flex-direction: column;
@@ -73,7 +102,7 @@
 }
 .transaction h4{
     font-size: 30px;
-    font-weight: 300;
+    font-weight: 500;
 }
 .transaction p{
     font-size: 12px;
@@ -81,8 +110,54 @@
 .flex{
     display: grid;
     grid-template-columns: repeat(4,auto);
-    justify-content: space-between;
     grid-row-gap: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+}
+
+@media screen and (max-width:1427px) {
+    .icon{
+        display: block;
+    }
+    .container h1{
+        display: none;
+    }
+}
+@media screen and (max-width:1047px) {
+    .flex{
+        grid-template-columns: repeat(3,auto);
+    }
+}
+@media screen and (max-width:1018px) {
+    .frame select{
+        padding-right: 5rem;
+    }
+}
+@media screen and (max-width:931px) {
+    .search{
+        display: none;
+    }
+}
+@media screen and (max-width:814px) {
+    .flex{
+        grid-template-columns: repeat(2,auto);
+       justify-content: center;
+       grid-column-gap: 30px;
+    }
+}
+@media screen and (max-width:782px) {
+    .frame{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media screen and (max-width:562px) {
+    .flex{
+        grid-template-columns: auto;
+    }
+    .gridout{
+     width: 22rem;        
+    }
 }

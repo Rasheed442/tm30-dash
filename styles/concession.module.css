@@ -60,3 +60,15 @@
     border: none;
     color: white;
 }
+.save{
+    display: flex;
+    justify-content: space-between;
+}
+.changes{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.changes p{
+    color: gray;
+}

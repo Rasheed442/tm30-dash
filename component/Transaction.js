@@ -1,8 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Link from "next/link"
-import {AiOutlineRight,AiOutlineDown,AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai"
+import {AiOutlineDown,AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai"
 import style from "../styles/transaction.module.css"
+import styles from "../styles/dispute.module.css"
+import disputes from "../pages/dispute.json"
 function Transaction() {
+  const [counter, setCounter] = useState(1)
   return (
   <div className={style.container}>
      <div className={style.background}>
@@ -11,7 +14,7 @@ function Transaction() {
             <Link href='/'><p>View All Transactions</p></Link>
         </div> 
 
-<div className={style.gridout}>
+{/* <div className={style.gridout}>
 
         <div className={style.profile}>
             <span>AGENT NAME &nbsp;<AiOutlineDown/></span>
@@ -154,21 +157,68 @@ function Transaction() {
             <p>James Adekola</p>   
         </div>
 
-</div>
+</div> */}
+
+
+<table className={styles.table}>
+                      <thead>
+                            <tr>
+                               <th>AGENT NAME</th>
+                               <th>AGENT ID</th>
+                               <th>PHONE NUMBER</th>
+                               <th>AGENT BUSINESS NAME</th>
+                               <th>AGENT EMAIL ADDRESS</th>
+                               <th>TRANSACTION DISPUTES CONTENT</th>
+                               <th>ACTION</th>
+                               <th>RESOLVED STATUS</th>
+                         </tr>   
+                        </thead>
+                      
+                         {
+                          disputes.map((d)=>{
+                             return(
+                                <tbody>
+                                     <tr>
+                                    <td>{d.name}</td>
+                                    <td>{d.id}</td>
+                                    <td>{d.number}</td>
+                                    <td>{d.business_name}</td>
+                                    <td>{d.agent_email}</td>
+                                    <td>{d.transaction_dispute}</td>
+                                    <td style={{color:"blue",cursor:"pointer"}}>{d.action}</td>
+
+                                    <td style={{width:"100%",margin:"5px",display:"inline-flex",borderRadius:"5px",
+                                    justifyContent:"center",alignItems:"center",backgroundColor:`${d.Resolved_Status === "RESOLVED" ? 
+                                    "#00F4001A" : (d.Resolved_Status === "OPENED") ? "#E0191933" : (d.Resolved_Status === "ESCALATED") 
+                                    ?  "orange" : 'green' }`, color: `${d.Resolved_Status === "RESOLVED"?"GREEN":
+                                     (d.Resolved_Status === "OPENED")?"RED":(d.Resolved_Status === "ESCALATED")?"white":""}`}}>{d.Resolved_Status}</td>
+
+                                </tr>
+                                </tbody>
+                               
+                             )
+                          })
+                         }
+                    </table>
+
 
       <div className={style.footer}>
         <span>Showing 1 to 5 of 100 entries</span>
         <div className={style.btn}>
-          <button style={{border:"1px solid gainsboro", color:"#969494"}}><AiOutlineArrowLeft/>&nbsp;Previous</button>
+          <button style={{border:"1px solid red", color:"red"}} onClick={()=>{
+            setCounter(counter-1)
+          }}><AiOutlineArrowLeft/>&nbsp;Previous</button>
           <div className={style.btn1}>
-            <button style={{backgroundColor:"#1B59F8", color:"white"}}>1</button>
-            <button>2</button>
+            <button>{counter}</button>
+            {/* <button>2</button>
             <button>3</button>
             <button>4</button>
             <button>...</button>
-            <button>10</button>
+            <button>10</button> */}
           </div>
-          <button  style={{border:"1px solid #1B59F8", color:"#1B59F8"}}>Next&nbsp;<AiOutlineArrowRight/></button>
+          <button  style={{border:"1px solid #1B59F8", color:"#1B59F8"}} onClick={()=>{
+            setCounter(counter+1)
+          }}>Next&nbsp;<AiOutlineArrowRight/></button>
         </div>
       </div>
 

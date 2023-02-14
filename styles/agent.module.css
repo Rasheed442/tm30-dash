@@ -1,24 +1,35 @@
+.background{
+    display: flex;
+}
 .container{
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    align-items: center;
 }
 .profile{
     display: flex;
     gap: 20px;
+    align-items: center;
 }
-.reminder img{
-    position: relative;
-    margin-left: -8px;
+.reminder div{
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 10px;
+    margin-left: -10px;
+}
+.reminder{
+    display: flex;
 }
 .name span{
     color: gray;
-    font-size: 15px
+    font-size: 13px
 }
 .line{
     width: 2px;
     height: 50px;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
 }
 .search input{
     border: none;  
@@ -28,128 +39,100 @@
      padding: 10px;
 }
 .search{
-    border: 1px solid gray;
+    border: 1px solid #00A4E4;
     padding: 5px;
+    background-color: #F8FAFF;
     border-radius: 20px;
     height: 50px;
-}
-/* header styling */
-.background{
-    display: flex;
 }
 .main{
     width: 100vw;
     height: 100vh;
     overflow: scroll;
 }
-.bg{
-    background-color: whitesmoke;
-    height: 100%;
-    padding: 20px;
-    border-radius: 20px;
-}
-.wallet{
-    background-color: white;
-    width: 20rem;
+.agent{
+    background-color: #E8EEFE;
     display: flex;
-    flex-direction: column;
-    padding: 15px;
-    gap: 20px;
-    border-radius: 10px;
-}
-.wallet h5{
-    color: green;
-    font-weight: 500;
-
-}
-.wallet p{
-    font-size: 20px;
-}
-.wallet span{
-    color: gray;
-    font-size: 13px;
-}
-.balance{
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-}
-.service{
-    background-color: white;
-    margin: 20px;
-    padding: 15px;
-    height: 14rem;
-    border-radius: 20px;
-}
-.services{
-    display: flex;
-    gap: 30px;
-}
-.services button{
-    height: 30px;
-    padding: 5px;
-    border: 1px solid gainsboro;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #999999;
-}
-.dstv{
-    border: 1px solid gainsboro;
-    border-radius: 10px;
-    padding: 20px;
-    width: 7.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.dstv h2{
-    font-weight: 200;
-    font-size: 20px;
-}
-.dstv p{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-.add{
-    border: 1px solid #00A4E4;
-    border-radius: 10px;
-    padding: 20px;
-    width: 8rem;
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    color: #1B59F8;
+    border-radius: 15px;
     cursor: pointer;
 }
-.add h2{
-    font-weight: 200;
-    font-size: 20px;
+.agent p{
+    font-size: 12px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }
-.add p{
-    font-size: 10px;
+.contain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid gainsboro;
 }
-.prof p{
-    font-size: 11px;
- }
- .prof span{
-     font-size: 10px;
-     color: gray;
- }
- .prof{
+
+.bg{
+    background-color: ghostwhite;
+    border-radius: 20px;
+    height: 100vh;
+}
+.head{
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+}
+.head p{
+    background-color: #1B59F8;
+    color: white;
+    height: 40px;
+    width: 10rem;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.head span{
+    color: gray;
+    cursor: pointer;
+    text-align: center;
+    width: 10rem;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.gridout{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 10px;
+
+}
+.status{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding-top: 20px;
+    cursor: pointer;
 }
- .gridout{
-     display: flex;
-     justify-content: space-between;
- }
- .footer{
+.status p{
+    font-size: 13px;
+}
+.status main{
+    color: gray;
+    font-size: 10px;
+}
+.statu main{
+    color: gray;
+    font-size: 10px;
+}
+.statu{
+    display: flex;
+    flex-direction: column;
+    gap: 9.5px;
+}
+.footer{
     display: flex;
     justify-content: space-between;
     padding: 20px;

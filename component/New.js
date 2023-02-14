@@ -1,9 +1,11 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import style from "../styles/new.module.css"
-import {AiFillCaretDown} from "react-icons/ai"
+import {AiFillCaretDown, AiOutlineClose} from "react-icons/ai"
 import Axios from "axios"
-import Sidebar from '../component/Sidebar'
-function New() {
+import Sidebar from './Sidebar'
+import Aos from "aos";
+import "aos/dist/aos.css";
+function New({handle}) {
       const [fullname, setFullname] = useState()
       const [number, setNumber] = useState()
       const [businessname, setBusinessname] = useState()
@@ -15,6 +17,7 @@ function New() {
       const details = {fullname,number,businessaddress,businessname,localgovt,state,bvn}
   
     async function submithandler(e){
+      e.PreventDefault();
         const response = await fetch ("https://x8ki-letl-twmt.n7.xano.io/api:O8cBFVK1/tm30",{
           method:"POST",
           headers:{"Content-Type":"application/json"},
@@ -24,13 +27,18 @@ function New() {
         console.log(server)
      }
        
+     useEffect(() => {
+      Aos.init({ duration: 1000 });
+    }, []);
       
   return (
-   <div className={style.header}>
-  <Sidebar/>
+   <div className={style.header} data-aos="slide-down">
    
      <div className={style.container}>
-       <h3>Add New Agent</h3>
+      <div className={style.top}>
+               <h3>Add New Agent</h3>
+            <AiOutlineClose size={30} style={{cursor:"pointer"}} onClick={()=> {handle(false)}}/>
+      </div>
        <div className={style.background}>
               <div className={style.name}>
                 <label>Agent&apos;s Full name <span>*</span></label>

@@ -1,22 +1,31 @@
 .chart{
-    width: 600px;
+    width: 800px;
     background-color: white;
     padding: 20px;
     border-radius: 20px;
 }
 .main{
     display: flex;
+    padding: 20px;
     gap: 20px;
-    padding: 30px;
+    align-items: center;
+    justify-content: center;
 }
 .terminal{
     background-color: white;
     display: flex;
-    width: 10rem;
-    padding: 5px;
-    border: 10px;
+    height: 130px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 30px;
     flex-direction: column;
-    gap: 10px;
+}
+.gridout{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
 }
 .terminal span{
     color: gray;
@@ -26,15 +35,11 @@
     font-weight: bold;
     font-size: 20px;
 }
-.gridout{
-    display: grid;
-    grid-template-columns: repeat(3,auto);
-    gap: 20px;
-}
+
 .chart1{
     width: 300px;
     display: flex;
-    gap: 40px;
+    gap: 20px;
 }
 .statistic{
     display: flex;
@@ -52,25 +57,28 @@
 }
 .flexout{
     background-color: white;
-    width: 40rem;
+    width: 100%;
     padding: 20px;
     border-radius: 10px;
     margin-left: 30px;
 }
+.flexout p{
+    font-size: 12px;
+}
 .blue{
     width: 10px;
     height: 10px;
-    background-color: blue;
+    background-color: #FD8A8A;
 }
 .orange{
     width: 10px;
     height: 10px;
-    background-color: orange;
+    background-color: #7286D3;
 }
 .green{
     width: 10px;
     height: 10px;
-    background-color: green;
+    background-color:lightblue;
 }
 .gray{
     width: 10px;
@@ -94,5 +102,76 @@
 }
 .divert{
     display: flex;
+    justify-content: center;
     padding: 30px;
+}
+
+
+@media screen and (max-width:1143px) {
+    .chart{
+        width: 900px;
+    }   
+    .main{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .terminal{
+      width: 15rem;
+      padding: 20px;
+      align-items: center;
+    }
+    .divert{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+ 
+}
+@media screen and (max-width:909px) {
+    .chart{
+        width: 600px;
+    }   
+}
+@media screen and (max-width:765px) {
+    .gridout{
+        grid-template-columns: repeat(2,auto);
+    }
+}
+@media screen and (max-width:690px) {
+        .chart1{
+            width: 200px;
+        }    
+    }
+
+@media screen and (max-width:604px) {
+    .chart{
+        width: 450px;
+    }
+    .terminal{
+        width: 20rem;
+    }
+}
+@media screen and (max-width:507px) {
+    .gridout{
+        grid-template-columns: auto;;
+    }
+    .terminal{
+        width: 23rem;
+        align-items: flex-start;
+    }
+    .terminal span{
+        font-size: 25px;
+    }
+    .terminal p{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:465px) {
+    .chart{
+        width: 390px;   
+    }
+    .chart1{
+        gap: 10px;
+    }
 }
