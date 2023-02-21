@@ -33,9 +33,9 @@ function login() {
         localStorage.setItem('userName', JSON.stringify(server?.data?.name))
         localStorage.setItem('token', JSON.stringify(server?.token))
         localStorage.setItem('logo', JSON.stringify(server?.data?.logo))
-        // if(server.status){
-        //   window.location="/dashboard"  
-        // }
+        if(server.status){
+          window.location="/dashboard"  
+        }
         setLoading(false)
       }
       //   console.log(auth)
