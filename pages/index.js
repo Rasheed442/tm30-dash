@@ -51,7 +51,7 @@ function login() {
       
   return (
     <div className={style.background}>
-        <Image src='/eclipse.png'alt='eclipese' width={700} height={200} priority/>
+        <Image src='/eclipse.png'alt='' width={700} height={200} priority/>
 
         <div className={style.container}>
           <Image src="/frame.png" alt='' width={600} height={400} priority/>
