@@ -13,6 +13,8 @@ import disputes from "../pages/dispute.json"
 function dispute() {
    const [counter, setCounter] = useState(1)
    const [oneData, setOneData] = useState([])
+   const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
+
    const [show, setShow] = useState(false)
    console.log(oneData)
    console.log(show)
@@ -30,12 +32,11 @@ function dispute() {
                  <Image src="/dot.png" width={20} height={20} priority />
               </div>
              <div className={style.line}></div>          
-                   <Link href='setting'><Image src="/profile.png" width={50} height={50} priority/></Link>
+                   <Link href='setting'><Image src="/profile.png" width={40} height={40} priority/></Link>
              <div className={style.name}>
-                <p>Segun Peters</p>
+                <p style={{textTransform:"capitalize"}}>{username} <AiOutlineDown size={12}/></p>
                 <span>Agent Manager</span>
              </div>
-             <AiOutlineDown size={15}/>
           </div>     
       </div>
 

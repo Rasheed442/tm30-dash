@@ -7,20 +7,26 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 function New({handle}) {
       const [fullname, setFullname] = useState()
-      const [number, setNumber] = useState()
-      const [businessname, setBusinessname] = useState()
-      const [businessaddress, setBusinessaddress] = useState()
+      const [phonenumber, setNumber] = useState()
+      const [business_name, setBusinessname] = useState()
+      const [address, setBusinessaddress] = useState()
       const [localgovt, setLocalgovt] = useState()
       const [state, setState] = useState()
-      const [bvn, setBvn] = useState()
+      const [region, setRegion] = useState()
+      const [email, setEmail] = useState()
 
-      const details = {fullname,number,businessaddress,businessname,localgovt,state,bvn}
+     const token = JSON.parse(localStorage.getItem('token'))
+       
+      const details = {fullname,phonenumber,address,business_name,localgovt,state,region,email}
   
     async function submithandler(e){
-      e.PreventDefault();
-        const response = await fetch ("https://x8ki-letl-twmt.n7.xano.io/api:O8cBFVK1/tm30",{
+      e.preventDefault();
+        const response = await fetch ("http://89.38.135.41:9800/manager/create/agent",{
           method:"POST",
-          headers:{"Content-Type":"application/json"},
+          headers:{
+            "Content-Type":"application/json",
+            "Authorization":`Bearer ${token}`,
+          },
           body: JSON.stringify(details)
         })
         const server = await response.json();
@@ -53,6 +59,10 @@ function New({handle}) {
                 <input type='text' placeholder='Enter your Business name' onChange={(e) => setBusinessname(e.target.value)}/>
               </div>
               <div className={style.name}>
+                <label>Email <span>*</span></label>
+                <input type='text' placeholder='Enter your Government Issued ID' onChange={(e) => setEmail(e.target.value)}/>
+              </div>
+              <div className={style.name}>
                 <label>Business Address <span>*</span></label>
                 <input type='text' placeholder='Enter your Business Address' onChange={(e) => setBusinessaddress(e.target.value)}/>
               </div>
@@ -61,12 +71,12 @@ function New({handle}) {
                 <input type='text' placeholder='Enter your Local Government Area' onChange={(e) => setLocalgovt(e.target.value)}/>
               </div>
               <div className={style.name}>
-                <label>State <span>*</span></label>
-                <input type='text' placeholder='Enter your state' onChange={(e) => setState(e.target.value)}/>
+                <label>Region <span>*</span></label>
+                <input type='text' placeholder='Enter your Local Government Area' onChange={(e) => setRegion(e.target.value)}/>
               </div>
               <div className={style.name}>
-                <label>Government Issued ID (BVN, NIN) <span>*</span></label>
-                <input type='text' placeholder='Enter your Government Issued ID' onChange={(e) => setBvn(e.target.value)}/>
+                <label>State <span>*</span></label>
+                <input type='text' placeholder='Enter your state' onChange={(e) => setState(e.target.value)}/>
               </div>
               
               <div className={style.btn}>

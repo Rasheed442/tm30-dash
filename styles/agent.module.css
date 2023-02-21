@@ -33,17 +33,22 @@
 }
 .search input{
     border: none;  
-     width: 30rem;
+    width: 25rem;
      outline: none;
-     font-size: 15px;
-     padding: 10px;
+     background-color: #F8FAFF;
+}
+.search::placeholder{
+    color: #999999;
 }
 .search{
     border: 1px solid #00A4E4;
-    padding: 5px;
     background-color: #F8FAFF;
     border-radius: 20px;
-    height: 50px;
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    padding: 10px;
+    width: 30rem;
 }
 .main{
     width: 100vw;
@@ -57,13 +62,15 @@
     align-items: center;
     padding: 10px;
     color: #1B59F8;
-    border-radius: 15px;
+    border-radius: 5px;
+    width: 18%;
     cursor: pointer;
 }
 .agent p{
     font-size: 12px;
     display: flex;
     gap: 5px;
+    font-weight: 500;
     align-items: center;
 }
 .contain{
@@ -75,9 +82,13 @@
 }
 
 .bg{
-    background-color: ghostwhite;
-    border-radius: 20px;
-    height: 100vh;
+    background-color: whitesmoke;
+    padding: 20px;
+}
+.white{
+    background-color: white;
+    height: 100%;
+    border-radius: 10px;
 }
 .head{
     display: flex;
@@ -117,11 +128,14 @@
     cursor: pointer;
 }
 .status p{
-    font-size: 13px;
+    font-size: 11px;
 }
 .status main{
     color: gray;
     font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .statu main{
     color: gray;
@@ -130,7 +144,8 @@
 .statu{
     display: flex;
     flex-direction: column;
-    gap: 9.5px;
+    gap: 9px;
+    cursor: pointer;
 }
 .footer{
     display: flex;

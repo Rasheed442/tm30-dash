@@ -10,17 +10,19 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    align-items: center;
 }
 .profile{
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 .reminder img{
     margin-left: -8px;
 }
 .name span{
     color: gray;
-    font-size: 13px
+    font-size: 12px
 }
 .line{
     width: 2px;

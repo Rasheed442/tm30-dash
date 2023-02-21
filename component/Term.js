@@ -2,13 +2,14 @@ import React,{useState,useEffect} from 'react'
 import style from "../styles/agent.module.css"
 import {AiOutlineDown,AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai"
 import {BsToggleOn,BsToggleOff} from "react-icons/bs"
+import {TiArrowUnsorted} from "react-icons/ti"
 function Term({check}) {
   const [counter, setCounter] = useState(0)
   return (
     <div>
 <div className={style.gridout}>
        <div className={style.status} onClick={()=>{check(true)}}>
-        <main>ASSIGNED AGENT NAME <AiOutlineDown/></main>
+        <main>ASSIGNED AGENT NAME <TiArrowUnsorted size={12}/></main>
         <p>James Adekola</p>
         <p>Shola Adeniyi</p>
         <p>Shola Adeniyi</p>
@@ -20,9 +21,27 @@ function Term({check}) {
         <p>James Adekola</p>
         <p>James Adekola</p>
         <p>James Adekola</p>
+        <p>James Adekola</p>
+        <p>James Adekola</p>
+        <p>James Adekola</p>
+        <p>James Adekola</p>
+        <p>James Adekola</p>
+        <p>James Adekola</p>
+        <p>James Adekola</p>
+        <p>James Adekola</p>
+        <p>James Adekola</p>
        </div>
        <div className={style.status}>
-        <main>AGENT ID <AiOutlineDown/></main>
+        <main>AGENT ID   <TiArrowUnsorted size={12}/></main>
+        <p>N1123SB3</p>
+        <p>N1123SB3</p>
+        <p>N1123SB3</p>
+        <p>N1123SB3</p>
+        <p>N1123SB3</p>
+        <p>N1123SB3</p>
+        <p>N1123SB3</p>
+        <p>N1123SB3</p>
+        <p>N1123SB3</p>
         <p>N1123SB3</p>
         <p>N1123SB3</p>
         <p>N1123SB3</p>
@@ -36,7 +55,17 @@ function Term({check}) {
         <p>N1123SB3</p>
        </div>
        <div className={style.status}>
-        <main>TERMINAL ID <AiOutlineDown/></main>
+        <main>TERMINAL ID   <TiArrowUnsorted size={12}/>
+</main>
+           <p>N1123SB3</p>
+           <p>N1123SB3</p>
+           <p>N1123SB3</p>
+           <p>N1123SB3</p>
+           <p>N1123SB3</p>
+           <p>N1123SB3</p>
+           <p>N1123SB3</p>
+           <p>N1123SB3</p>
+           <p>N1123SB3</p>
            <p>N1123SB3</p>
            <p>N1123SB3</p>
            <p>N1123SB3</p>
@@ -50,7 +79,16 @@ function Term({check}) {
            <p>N1123SB3</p>
        </div>
        <div className={style.status}>
-        <main>BUSINESS NAME <AiOutlineDown/></main>
+        <main>BUSINESS NAME  <TiArrowUnsorted size={12}/></main>
+          <p>TM30 GLOBAL INTERNATIONAL</p>
+          <p>TM30 GLOBAL INTERNATIONAL</p>
+          <p>TM30 GLOBAL INTERNATIONAL</p>
+          <p>TM30 GLOBAL INTERNATIONAL</p>
+          <p>TM30 GLOBAL INTERNATIONAL</p>
+          <p>TM30 GLOBAL INTERNATIONAL</p>
+          <p>TM30 GLOBAL INTERNATIONAL</p>
+          <p>TM30 GLOBAL INTERNATIONAL</p>
+          <p>TM30 GLOBAL INTERNATIONAL</p>
           <p>TM30 GLOBAL INTERNATIONAL</p>
           <p>TM30 GLOBAL INTERNATIONAL</p>
           <p>TM30 GLOBAL INTERNATIONAL</p>
@@ -64,7 +102,16 @@ function Term({check}) {
           <p>TM30 GLOBAL INTERNATIONAL</p>
        </div>
        <div className={style.status}>
-        <main>EMAIL ADDRESS <AiOutlineDown/></main>
+        <main>EMAIL ADDRESS   <TiArrowUnsorted size={12}/></main>
+         <p>CUSTOMER@TM30.COM.NG</p>
+         <p>CUSTOMER@TM30.COM.NG</p>
+         <p>CUSTOMER@TM30.COM.NG</p>
+         <p>CUSTOMER@TM30.COM.NG</p>
+         <p>CUSTOMER@TM30.COM.NG</p>
+         <p>CUSTOMER@TM30.COM.NG</p>
+         <p>CUSTOMER@TM30.COM.NG</p>
+         <p>CUSTOMER@TM30.COM.NG</p>
+         <p>CUSTOMER@TM30.COM.NG</p>
          <p>CUSTOMER@TM30.COM.NG</p>
          <p>CUSTOMER@TM30.COM.NG</p>
          <p>CUSTOMER@TM30.COM.NG</p>
@@ -78,7 +125,16 @@ function Term({check}) {
          <p>CUSTOMER@TM30.COM.NG</p>
        </div>
        <div className={style.status}>
-        <main>ADDRESS <AiOutlineDown/></main>
+        <main>ADDRESS   <TiArrowUnsorted size={12}/></main>
+           <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
+           <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
+           <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
+           <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
+           <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
+           <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
+           <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
+           <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
+           <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
            <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
            <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
            <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
@@ -92,7 +148,15 @@ function Term({check}) {
            <p>27,ADEAGA STR, ABULE EGBA, LAGOS</p>
        </div>
        <div className={style.statu}>
-        <main>STATUS <AiOutlineDown/></main>
+        <main>STATUS <TiArrowUnsorted size={12}/></main>
+          <BsToggleOff size={25} style={{color:"#2DCA72"}}/>
+          <BsToggleOff size={25} style={{color:"#2DCA72"}}/>
+          <BsToggleOff size={25} style={{color:"#2DCA72"}}/>
+          <BsToggleOff size={25} style={{color:"#2DCA72"}}/>
+          <BsToggleOff size={25} style={{color:"#2DCA72"}}/>
+          <BsToggleOff size={25} style={{color:"#2DCA72"}}/>
+          <BsToggleOff size={25} style={{color:"#2DCA72"}}/>
+          <BsToggleOff size={25} style={{color:"#2DCA72"}}/>
           <BsToggleOff size={25} style={{color:"#2DCA72"}}/>
           <BsToggleOff size={25} style={{color:"#2DCA72"}}/>
           <BsToggleOff size={25} style={{color:"#2DCA72"}}/>

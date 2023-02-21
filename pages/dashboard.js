@@ -10,6 +10,10 @@ import style from "../styles/dashboard.module.css"
 import Sidebar from '../component/Sidebar'
 function Main() {
     const [show, setShow] = useState(false)
+    const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
+    const logo = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("logo")) : "/profile.png/"
+    console.log('logo',logo)
+ 
   return (
     <>
     <div className={style.topp}>
@@ -22,10 +26,10 @@ function Main() {
  </div>
 
  <div className={style.search}>
-      <AiOutlineSearch size={20} style={{marginBottom:"-6px", color:"gray"}}/>
+      <AiOutlineSearch size={20} style={{ color:"gray"}}/>
       <input type="text" placeholder='Search Terminals ID, Agent and Agent Managers'/>
  </div>
-
+ <Link href='setting'>
    <div className={style.profile}>
        <div className={style.reminder}>
          <AiTwotoneBell size={27} style={{backgroundColor:"gainsboro", color:"gray", borderRadius:"10px"}}/>
@@ -33,13 +37,12 @@ function Main() {
           <div></div>
        </div>
       <div className={style.line}></div>          
-           <Link href='setting'><Image src="/profile.png" width={50} height={50} priority/></Link> 
+          <Image src="/profile.png" width={40} height={40} priority/>
       <div className={style.name}>
-         <p>Segun Peters</p>
+         <p>{username} <AiOutlineDown/></p>
          <span>Agent Manager</span>
       </div>
-      <AiOutlineDown size={15}/>
-   </div>
+   </div></Link> 
    
 </div>  
 
@@ -62,71 +65,70 @@ function Main() {
 <div className={style.gridout}>
 <div className={style.transaction}>
  <h5>Total Transactions(Naira)</h5>
- <h4>500,000,783</h4>
- <p><span><MdStackedLineChart style={{color:"green"}}/> 1.3%</span> up from last week</p>
+ <h4><span style={{fontSize:"25px", fontWeight:"800"}}>#</span>500,000,783</h4>
+ <p><span style={{color:"green"}}><Image src="/Vector.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/frame 4.png"width={50} height={50} priority/>
 </div>
 
 <div className={style.gridout}>
 <div className={style.transaction}>
- <h5>Total Transactions(Naira)</h5>
- <h4>80,131,139</h4>
- <p><span><BiLineChartDown style={{color:"green"}}/> 1.3%</span> up from last week</p>
+ <h5>Total Earnings/Commission</h5>
+ <h4><span style={{fontSize:"25px", fontWeight:"800"}}>#</span>80,131,139</h4>
+ <p><span style={{color:"red"}}><Image src="/vecdown.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/frame3.png" width={50} height={50} priority/>
 </div>
 
 <div className={style.gridout}>
 <div className={style.transaction}>
- <h5>Total Transactions(Naira)</h5>
+ <h5>Total Successful Transactions</h5>
  <h4>16,483</h4>
- <p><span><MdStackedLineChart style={{color:"green"}}/> 1.3%</span> up from last week</p>
+ <p><span style={{color:"green"}}><Image src="/Vector.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/scale3.png" width={50} height={50} priority/>
 </div>
 
 <div className={style.gridout}>
 <div className={style.transaction}>
- <h5>Total Transactions(Naira)</h5>
+ <h5>Total Failed Transactions</h5>
  <h4>1,288</h4>
- <p><span><MdStackedLineChart style={{color:"green"}}/> 1.3%</span> up from last week</p>
+ <p><span style={{color:"green"}}><Image src="/Vector.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/scale4.png" width={50} height={50} priority/>
 </div>
 
 <div className={style.gridout}>
 <div className={style.transaction}>
- <h5>Total Transactions(Naira)</h5>
+ <h5>Total Number of Agents</h5>
  <h4>1,123</h4>
- <p><span><MdStackedLineChart style={{color:"green"}}/> 1.3%</span> up from last week</p>
+ <p><span style={{color:"green"}}><Image src="/Vector.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/frame2.png" width={50} height={50} priority/>
 </div>
 
 <div className={style.gridout}>
 <div className={style.transaction}>
- <h5>Total Transactions(Naira)</h5>
+ <h5>Total Number of Transactions</h5>
  <h4>4,231</h4>
- <p><span><MdStackedLineChart style={{color:"green"}}/> 1.3%</span> up from last week</p>
+ <p><span><Image src="/Vector.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/person3.png" width={50} height={50} priority/>
 </div>
 
 <div className={style.gridout}>
 <div className={style.transaction}>
- <h5>Total Transactions(Naira)</h5>
+ <h5>Total Number of Terminals</h5>
  <h4>5,783</h4>
- <p><span><MdStackedLineChart style={{color:"green"}}/> 1.3%</span> up from last week</p>
+ <p><span style={{color:"green"}}><Image src="/Vector.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/person2.png" width={50} height={50} priority/>
 </div>
 
 <div className={style.gridout}>
 <div className={style.transaction}>
- <h5>Total Transactionsjj(Naira)</h5>
- <h4>66,503</h4>
- <p><span><MdStackedLineChart style={{color:"green"}}/> 1.3%</span> up from last week</p>
+ <h5>Total Referral Bonus</h5>
+ <h4><span style={{fontSize:"25px", fontWeight:"800"}}>#</span>66,503</h4>
 </div>
 <Image src="/frame1.png" width={50} height={50} priority/>
 </div>

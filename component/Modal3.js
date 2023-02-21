@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import style from "../styles/modal3.module.css"
+import style from "../styles/modal2.module.css"
 import {AiOutlineClose,AiFillCaretDown} from "react-icons/ai"
 import {BsUpload} from "react-icons/bs"
 import Image from 'next/image'
@@ -16,7 +16,7 @@ function Modal3({cancelmodal3}) {
     const [saved, setSaved]= useState(false)
     const [multiple, setMultiple]= useState(false)
     useEffect(() => {
-        Aos.init({ duration: 1000 });
+        Aos.init({ duration: 500 });
       }, []);
 
        function handler(){
@@ -25,7 +25,8 @@ function Modal3({cancelmodal3}) {
 
   return (
     <>
-    {saved ? "":<div className={style.container} data-aos='slide-down'>
+    {saved ? "":<div className={style.container} >
+      <div className={style.white} data-aos='slide-down'>
         <div className={style.header}>
             <h1>Fund Agent&apos;s Account</h1>
             <AiOutlineClose size={25} style={{cursor:"pointer"}} onClick={()=> {cancelmodal3(false)}} />
@@ -65,7 +66,7 @@ function Modal3({cancelmodal3}) {
       <label>Agent Account Number</label>
       <input type='input' placeholder="Enter Agent's Account Number"/>
    </div>}
-
+   
    </div>
 
    <div className={style.proceed} onClick={()=>{
@@ -77,7 +78,7 @@ function Modal3({cancelmodal3}) {
        <button onClick={handler}>Proceed</button>
    </div>
 
-
+</div>
 
     </div>}
 

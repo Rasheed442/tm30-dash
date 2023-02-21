@@ -101,6 +101,16 @@
     padding-right: 5rem;
     gap: 10rem;
 }
+
+.middle{
+    display: flex;
+    padding-right: 5rem;
+    padding-left: 2.5rem;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
 .name{
     display: flex;
     flex-direction: column;
@@ -112,18 +122,13 @@
     background-color: #E8EEFE;
     border: 1px solid blue;
     border-radius: 5px;
+    color: #212121;
     outline: none;
-    font-size: 17px;
+    font-size: 13px;
     padding-left: 20px;
 }
-.middle{
-    display: flex;
-    padding-right: 5rem;
-    padding-left: 2.5rem;
-    justify-content: space-between;
-    margin-top: 30px;
-    margin-bottom: 30px;
-
+.name ::placeholder{
+    color: #212121;
 }
 .agent{
     display: flex;
@@ -137,8 +142,12 @@
     border: 1px solid blue;
     border-radius: 5px;
     outline: none;
-    font-size: 17px;
+    color: #212121;
+    font-size: 13px;
     padding-left: 20px;
+}
+.agent ::placeholder{
+    color: #212121;
 }
 .add{
     display: flex;
@@ -153,7 +162,11 @@
     border: 1px solid blue;
     border-radius: 5px;
     outline: none;
-    font-size: 17px;
+    color: #212121;
+    font-size: 13px;
     padding-left: 20px;
+}
+.add ::placeholder{
+    color: #212121;
 }
 

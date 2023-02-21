@@ -4,6 +4,8 @@ import style from "../styles/setting.module.css"
 import {AiOutlineSearch,AiTwotoneBell,AiOutlineDown,AiTwotoneLock } from "react-icons/ai"
 import Image from 'next/image'
 function setting() {
+   const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
+
   return (
     <div className={style.background}>
     <Sidebar/>
@@ -23,12 +25,12 @@ function setting() {
           <div></div>
        </div>
          <div className={style.line}></div>          
-               <Image src="/profile.png" width={50} height={50} priority/>
+               <Image src="/profile.png" width={40} height={40} priority/>
          <div className={style.name}>
-            <p>Segun Peters</p>
+            <p style={{textTransform:"capitalize"}}>{username} <AiOutlineDown size={12}/></p>
             <span>Agent Manager</span>
          </div>
-         <AiOutlineDown size={15}/>
+         
       </div>
         </div>
          
@@ -60,7 +62,7 @@ function setting() {
             <div className={style.middle}>
                  <div className={style.name}>
                     <label>Business Name</label>
-                    <input type='text' placeholder='TM30 International Limited'/>
+                    <input type='text' placeholder='TM30 INTERNATIONAL LIMITED'/>
                  </div>
                  <div className={style.agent}>
                     <label>Number of terminal</label>

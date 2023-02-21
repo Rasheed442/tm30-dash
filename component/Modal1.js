@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 function Modal1({handle}) {
   const [saved, setSaved] = useState(false)
     useEffect(() => {
-        Aos.init({ duration: 1000 });
+        Aos.init({ duration: 500 });
       }, []);
   return (
     <div className={style.modal} >

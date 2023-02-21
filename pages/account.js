@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Sidebar from '../component/Sidebar'
 import style from "../styles/account.module.css"
 import styles from "../styles/transaction.module.css"
 import Image from 'next/image'
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Modal from "react-modal"
 import {AiOutlineSearch,AiTwotoneBell,AiOutlineDown,AiOutlineArrowLeft,
   AiOutlineArrowRight,AiOutlinePlus,AiFillEye,AiFillEyeInvisible} from "react-icons/ai"
 import {MdShowChart} from "react-icons/md"
+import {TiArrowUnsorted} from "react-icons/ti"
 import Transaction from '../component/Transaction'
 import Modal1 from '../component/Modal1'
 import Modal2 from '../component/Modal2'
@@ -16,10 +19,15 @@ function account() {
   const [modal1, setModal1] = useState(false)
   const [modal2, setModal2] = useState(false)
   const [modal3, setModal3] = useState(false)
+  const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
 
   const [counter, setCounter] = useState(1)
 
   const [see, setSee] = useState(false)
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
 
   return (
     <>  
@@ -46,12 +54,12 @@ function account() {
        </div>      
 
              <div className={style.line}></div>          
-                  <Link href='setting'><Image src="/profile.png" width={50} height={50} priority/></Link> 
+                  <Link href='setting'>< Image src="/profile.png" width={40} height={40} priority/></Link> 
+                  
              <div className={style.name}>
-                <p>Segun Peters</p>
+                <p style={{textTransform:"capitalize"}}>{username} <AiOutlineDown size={12}/></p>
                 <span>Agent Manager</span>
              </div>
-             <AiOutlineDown size={15}/>
           </div>  
       
     </div> 
@@ -104,7 +112,7 @@ function account() {
 <div className={styles.gridout}>
 
         <div className={styles.profile}>
-            <span>AGENT NAME &nbsp;<AiOutlineDown/></span>
+            <span>AGENT NAME<TiArrowUnsorted size={12}/></span>
             <p>James Adekola</p>
             <p>Shola Adeniyi</p>
             <p>Shola Adeniyi</p>
@@ -132,7 +140,7 @@ function account() {
             <p>N1123SB3</p> 
         </div>
         <div className={styles.profile}>
-            <span>RES MESSAGE<AiOutlineDown/></span>
+            <span>AGENT ACCOUNT NO. <TiArrowUnsorted size={12}/></span>
             <p>Transaction Approved</p>  
             <p>Transaction Approved</p>  
             <p>Transaction Approved</p>  
@@ -146,49 +154,50 @@ function account() {
             <p>Insufficient Fund</p>  
         </div>
         <div className={styles.profile}>
-            <span>RESP CODE &nbsp;<AiOutlineDown/></span>
-            <p>00</p> 
-            <p>00</p> 
-            <p>00</p> 
-            <p>00</p> 
-            <p>00</p> 
-            <p>00</p> 
-            <p>00</p> 
-            <p>00</p> 
-            <p>00</p> 
-            <p>00</p> 
-            <p>00</p> 
+            <span>BUSINESS NAME <TiArrowUnsorted size={12}/></span>
+            <p>TM30 GLOBAL INTERNATIONAL</p> 
+            <p>TM30 GLOBAL INTERNATIONAL</p> 
+            <p>TM30 GLOBAL INTERNATIONAL</p> 
+            <p>TM30 GLOBAL INTERNATIONAL</p> 
+            <p>TM30 GLOBAL INTERNATIONAL</p> 
+            <p>TM30 GLOBAL INTERNATIONAL</p> 
+            <p>TM30 GLOBAL INTERNATIONAL</p> 
+            <p>TM30 GLOBAL INTERNATIONAL</p> 
+            <p>TM30 GLOBAL INTERNATIONAL</p> 
+            <p>TM30 GLOBAL INTERNATIONAL</p> 
+            <p>TM30 GLOBAL INTERNATIONAL</p> 
         </div>
         <div className={styles.profile}>
-            <span>TRANS.TYPE &nbsp;<AiOutlineDown/></span>
-            <p style={{color:"green"}}>Withdrawal</p>
-            <p style={{color:"green"}}>Withdrawal</p>
-            <p style={{color:"green"}}>Withdrawal</p>
-            <p style={{color:"red"}}>Deposit</p>
-            <p style={{color:"green"}}>Withdrawal</p>
-            <p style={{color:"green"}}>Withdrawal</p>
-            <p style={{color:"green"}}>Withdrawal</p>
-            <p style={{color:"red"}}>Deposit</p>
-            <p style={{color:"green"}}>Withdrawal</p>
-            <p style={{color:"green"}}>Withdrawal</p>
-            <p style={{color:"green"}}>Withdrawal</p>
+            <span>EMAIL ADDRESS <TiArrowUnsorted size={12}/></span>
+            <p>CUSTOMER@TM30.COM.NG</p>
+            <p>CUSTOMER@TM30.COM.NG</p>
+            <p>CUSTOMER@TM30.COM.NG</p>
+            <p>CUSTOMER@TM30.COM.NG</p>
+            <p>CUSTOMER@TM30.COM.NG</p>
+            <p>CUSTOMER@TM30.COM.NG</p>
+            <p>CUSTOMER@TM30.COM.NG</p>
+            <p>CUSTOMER@TM30.COM.NG</p>
+            <p>CUSTOMER@TM30.COM.NG</p>
+            <p>CUSTOMER@TM30.COM.NG</p>
+            <p>CUSTOMER@TM30.COM.NG</p>
         </div>
         <div className={styles.profile}>
-            <span>AMOUNT&nbsp;<AiOutlineDown/></span>
-            <p>&#8358;150,000</p>
-            <p>&#8358;250,000</p>
-            <p>&#8358;170,000</p>
-            <p>&#8358;80,000</p>
-            <p>&#8358;96,000</p>
-            <p>&#8358;10,000</p>
-            <p>&#8358;52,000</p>
-            <p>&#8358;80,000</p>
-            <p>&#8358;96,000</p>
-            <p>&#8358;42,000</p>
-            <p>&#8358;40,000</p>
+            <span>STATE <TiArrowUnsorted size={12}/></span>
+            <p>LAGOS STATE</p>
+            <p>LAGOS STATE</p>
+            <p>LAGOS STATE</p>
+            <p>LAGOS STATE</p>
+            <p>LAGOS STATE</p>
+            <p>LAGOS STATE</p>
+            <p>LAGOS STATE</p>
+            <p>LAGOS STATE</p>
+            <p>LAGOS STATE</p>
+            <p>LAGOS STATE</p>
+            <p>LAGOS STATE</p>
+           
         </div>
         <div className={styles.profile}>
-            <span>EARNING &nbsp;<AiOutlineDown/></span>
+            <span>AMOUNT FUNDED <TiArrowUnsorted size={12}/></span>
             <p>&#8358;150,000</p>
             <p>&#8358;250,000</p>
             <p>&#8358;170,000</p>
@@ -201,48 +210,35 @@ function account() {
             <p>&#8358;42,000</p>
             <p>&#8358;40,000</p> 
         </div>
+        {/* <div className={styles.profile}>
+            <span>DATE <TiArrowUnsorted size={12}/></span>
+           <p>14th April 2022</p>
+           <p>14th April 2022</p>
+           <p>14th April 2022</p>
+           <p>14th April 2022</p>
+           <p>14th April 2022</p>
+           <p>14th April 2022</p>
+           <p>14th April 2022</p>
+           <p>14th April 2022</p>
+           <p>14th April 2022</p>
+           <p>14th April 2022</p>
+           <p>14th April 2022</p>
+        </div> */}
         <div className={styles.profile}>
-            <span>DATE&nbsp;<AiOutlineDown/></span>
-           <p>14th April 2022</p>
-           <p>14th April 2022</p>
-           <p>14th April 2022</p>
-           <p>14th April 2022</p>
-           <p>14th April 2022</p>
-           <p>14th April 2022</p>
-           <p>14th April 2022</p>
-           <p>14th April 2022</p>
-           <p>14th April 2022</p>
-           <p>14th April 2022</p>
-           <p>14th April 2022</p>
+            <span>STATUS <TiArrowUnsorted size={12}/></span>
+             <p style={{backgroundColor:"#00F4001A",color:"#008000"}}>Successful</p> 
+             <p style={{backgroundColor:"#00F4001A",color:"#008000"}}>Successful</p> 
+             <p style={{backgroundColor:"#00F4001A",color:"#008000"}}>Successful</p> 
+             <p style={{backgroundColor:"#00F4001A",color:"#008000"}}>Successful</p> 
+             <p style={{backgroundColor:"#FF3A441A",color:"red",width:"100%", textAlign:"center"}}>FAILED</p> 
+             <p style={{backgroundColor:"#00F4001A",color:"#008000"}}>Successful</p> 
+             <p style={{backgroundColor:"#00F4001A",color:"#008000"}}>Successful</p> 
+             <p style={{backgroundColor:"#00F4001A",color:"#008000"}}>Successful</p> 
+             <p style={{backgroundColor:"#FF3A441A",color:"red",width:"100%", textAlign:"center"}}>FAILED</p> 
+             <p style={{backgroundColor:"#00F4001A",color:"#008000"}}>Successful</p> 
+             <p style={{backgroundColor:"#00F4001A",color:"#008000"}}>Successful</p> 
         </div>
-        <div className={styles.profile}>
-            <span>STATUS &nbsp;<AiOutlineDown/></span>
-             <p style={{backgroundColor:"#00F4001A",color:"#008000", padding:"4px, 8px, 4px, 8px",width:"60px"}}>Successful</p> 
-             <p style={{backgroundColor:"#00F4001A",color:"#008000", padding:"4px, 8px, 4px, 8px",width:"60px"}}>Successful</p> 
-             <p style={{backgroundColor:"#00F4001A",color:"#008000", padding:"4px, 8px, 4px, 8px",width:"60px"}}>Successful</p> 
-             <p style={{backgroundColor:"#00F4001A",color:"#008000", padding:"4px, 8px, 4px, 8px",width:"60px"}}>Successful</p> 
-             <p style={{backgroundColor:"#00F4001A",color:"#008000", padding:"4px, 8px, 4px, 8px",width:"60px"}}>Successful</p> 
-             <p style={{backgroundColor:"#00F4001A",color:"#008000", padding:"4px, 8px, 4px, 8px",width:"60px"}}>Successful</p> 
-             <p style={{backgroundColor:"#00F4001A",color:"#008000", padding:"4px, 8px, 4px, 8px",width:"60px"}}>Successful</p> 
-             <p style={{backgroundColor:"#00F4001A",color:"#008000", padding:"4px, 8px, 4px, 8px",width:"60px"}}>Successful</p> 
-             <p style={{backgroundColor:"#00F4001A",color:"#008000", padding:"4px, 8px, 4px, 8px",width:"60px"}}>Successful</p> 
-             <p style={{backgroundColor:"#00F4001A",color:"#008000", padding:"4px, 8px, 4px, 8px",width:"60px"}}>Successful</p> 
-             <p style={{backgroundColor:"#00F4001A",color:"#008000", padding:"4px, 8px, 4px, 8px",width:"60px"}}>Successful</p> 
-        </div>
-        <div className={styles.profile}>
-            <span>AGENT NAME &nbsp;<AiOutlineDown/></span>
-            <p>James Adekola</p>
-            <p>Shola Adeniyi</p>
-            <p>Shola Adeniyi</p>
-            <p>Tayo Temitope</p>
-            <p>Tayo Temitope</p>
-            <p>Shola Adeniyi</p>
-            <p>Shola Adeniyi</p>
-            <p>James Adekola</p>
-            <p>James Adekola</p>
-            <p>James Adekola</p>   
-            <p>James Adekola</p>   
-        </div>
+     
 
 </div>
 

@@ -1,4 +1,6 @@
-[
+import React from 'react'
+
+const Sides = [
     {
         "icon":"dash.png",
         "name":"Dashboard",
@@ -32,14 +34,6 @@
 
     },
     {
-        "icon":"analytics.png",
-        "name":"Requests",
-        "path":"/request",
-        "background":"ghostwhite",
-        "color":"#1B59F8"
-
-    },
-    {
         "icon":"set.png",
         "name":"Settings",
         "path":"/setting",
@@ -64,3 +58,12 @@
 
     }
 ]
+function side() {
+    console.log(Sides.path)
+
+  return (
+    <div>side</div>
+  )
+}
+
+export default side

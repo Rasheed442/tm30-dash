@@ -19,10 +19,11 @@ function testing() {
              <Link href={dash.path} className={router.pathname === dash.path ? style.top : ''}>
               <div className={style.head}>
           <Image src={`/${dash.icon}`} width={15} height={15}/>
-          <p>{dash.name}</p>   
+          <p >{dash.name}</p>   
            </div>
            </Link> 
-
+          
+          // style={{color:router.pathname === dash.path ? "blue":""}}
           
      
          

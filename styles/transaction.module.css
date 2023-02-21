@@ -1,20 +1,24 @@
 .background{
     background-color: white;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .container{
-    padding: 30px;
+    padding: 15px;
+    padding-top: 20px;
 }
 .transact{
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(221, 217, 217);
     padding: 10px;
     color: gray;
 }
 .transact p{
-    color: blue;
+    color: #1B59F8;
+    gap: 10px;
+    display: flex;
+    align-items: center;
     font-size: 15px;
 }
 .transact h3{
@@ -30,10 +34,15 @@
 }
 .profile p{
    font-size: 11px;
+   padding: 5PX;
+   border-radius: 2px;
 }
 .profile span{
     font-size: 10px;
     color: gray;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 .gridout{
     display: flex;

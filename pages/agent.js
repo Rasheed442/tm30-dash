@@ -9,16 +9,38 @@ import New from '../component/New'
 import Terminal from '../component/Terminal'
 import Link from 'next/link'
 import Assignterminal from '../component/Assignterminal'
+import Axios from 'axios'
 import Term2 from '../component/Term2'
 function agent() {
    const [counter, setCounter] = useState(1)
   // counter
+  const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
+  const token = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('token')) : null
+  
+// local storage
+  
     const [color, setColor] = useState(false)
     const [color2, setColor2] = useState(true)
     const [open, setOpen] = useState(false)
     const [terminal, setTerminal] = useState(false)
     const [assignterminal, setAssignterminal] = useState(false)
-    const [value, setValue] = useState("Agent")
+    const [allagents, setAllagents] = useState([])
+    const [value, setValue] = useState("Agents")
+    const config = {
+      headers:{
+        Authorization: `Bearer ${token}`
+      }
+    }
+
+    useEffect(() => {
+      Axios.get("http://89.38.135.41:9800/manager/agents/all", config).then((response)=>{
+        console.log(response.data)
+        setAllagents(response.data.getallagents)
+      })
+      
+    }, [])
+
+    
   return (
     
     <div className={style.background}> 
@@ -39,17 +61,17 @@ function agent() {
           <div></div>
        </div>
              <div className={style.line}></div>          
-                   <Link href='setting'><Image src="/profile.png" width={50} height={50} priority/></Link>
+                   <Link href='setting'><Image src="/profile.png" width={40} height={40} priority/></Link>
              <div className={style.name}>
-                <p>Segun Peters</p>
+                <p style={{textTransform:"capitalize"}}>{username} <AiOutlineDown size={12}/></p>
                 <span>Agent Manager</span>
              </div>
-             <AiOutlineDown size={15}/>
           </div>     
       </div> 
-      <div className={style.bg}>   
+      <div className={style.bg}>  
+      <div className={style.white}> 
       <div className={style.contain}>
-        <p>{value}</p>
+        <p style={{fontSize:"15px"}}>{value}</p>
         <div className={style.search}>
              <AiOutlineSearch size={20} style={{marginBottom:"-6px", color:"gray"}}/>
              <input type="text" placeholder='Search Terminals ID, Agent and Agent Managers'/>
@@ -62,11 +84,12 @@ function agent() {
           </div>:""}       
       </div>
       <div className={style.head}>
-         <p onClick={(e)=>{setColor(false),setColor2(true), setValue(e.target.textContent)}} style={{backgroundColor: color ? "transparent":"#1B59F8", color:color ? "gray":""}}>Agent </p>
-         <span onClick={(e)=>{setColor(true),setColor2(false),setValue(e.target.textContent)}} style={{backgroundColor: color ?"#1B59F8":"", color:color ?"white":""}}>Terminal</span>
+         <p onClick={(e)=>{setColor(false),setColor2(true), setValue(e.target.textContent)}} style={{backgroundColor: color ? "transparent":"#1B59F8", color:color ? "gray":""}}>Agents </p>
+         <span onClick={(e)=>{setColor(true),setColor2(false),setValue(e.target.textContent)}} style={{backgroundColor: color ?"#1B59F8":"", color:color ?"white":""}}>Terminals</span>
     </div>
-    {color2 ?<Term2 check={setTerminal} />:""} 
+    {color2 ?<Term2 data={allagents} check={setTerminal} />:""} 
        {color ?<Term check={setTerminal}/>:""}
+       </div>
        </div>
        </div>
 
@@ -86,7 +109,6 @@ function agent() {
    
   )
 }
-// "#969494"
 export default agent 
 
 // {/* <div className={style.footer}>

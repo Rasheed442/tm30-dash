@@ -15,13 +15,13 @@ function Modal2({cancelmodal2}) {
     const [status, setStatus] = useState(false)
 
     useEffect(() => {
-        Aos.init({ duration: 1000 });
+        Aos.init({ duration: 500 });
       }, []);
   return (
     <>
      {/* {modalsample ?<Modal1sample closemodalsample={setModalsample}/>:""} */}
    {fund ?"":<div className={style.container} >
-       <div className={style.white}>
+       <div className={style.white} data-aos="slide-down">
        
         <div className={style.header}>
             <h1>FUND WALLET</h1>

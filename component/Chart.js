@@ -2,7 +2,8 @@ import React from 'react'
 import style from "../styles/chart.module.css"
 import Image from 'next/image';
 import Chartjs from 'chart.js/auto';
-import {Bar, Pie, Line,Doughnut} from "react-chartjs-2"
+// import Bar from "../component/Bar"
+import {Bar,Pie, Line,Doughnut} from "react-chartjs-2"
 import {AiOutlineArrowRight} from "react-icons/ai"
 import Transaction from './Transaction';
 function Chart() {  
@@ -11,30 +12,38 @@ function Chart() {
         datasets:[{
             label:'Sales for 2020 (M)',
             data: [ 2.5,2,5,1,4,3,5,4,2,1,5,3],
-       
+            borderRadius: 10,
+            width:10,
+            borderSkipped: false,
             backgroundColor: [
-                // "orange"
-                "#FD8A8A",
-                "#7286D3",
-                "lightblue"        
+                "#FF993ACC"
+                // "#FD8A8A",
+                // "#7286D3",
+                // "lightblue"        
             ]
-        }]
+        }],
+        options:{
+            responsive:true
+        }
     }
     console.log(data.labels)
     const pie = {
-        labels:["37%","20%","43%"],
+        labels:["20%","80%"],
         datasets:[{
             label:'Sales for 2020 (M)',
-            data: [ 2,2,5],
+            data: [20,80],
+           
         
             backgroundColor: [
-                // "orange",
+                "#42CC7E",
+                "#FF993ACC",
                 // "green",
                 // "blue"
-                "#FD8A8A",
-                "#7286D3",
-                "lightblue"
-            ]
+                // "#FD8A8A",
+                // "#7286D3",
+                // "lightblue"
+            ],
+           
         }]
     }
     const doughnut = {
@@ -47,10 +56,10 @@ function Chart() {
                 // "green",
                 // "blue",
                 // "gray"
-                "#FD8A8A",
-                "#7286D3",
-                "lightblue",
-                "gray"         
+                "#7397F5",
+                "#FF993A",
+                "#42CC7E",
+                "#D1D2D2"         
        ]
         }]
     }
@@ -77,7 +86,8 @@ function Chart() {
                 <option>DEC</option>
             </select>
         </div>
-        <Bar data={data}/>
+        <Bar data={data} barSize={30}/>
+        {/* <Bar/> */}
     </div>
 
 <div className={style.gridout}>
@@ -93,7 +103,7 @@ function Chart() {
             </div>
         <div className={style.terminal}>
                 <span>Agent Managers</span>
-                <p>+34%</p>
+                <p>2734<span>/5,783</span></p>
             </div>
         <div className={style.terminal}>
                 <span>Active Terminals</span>
@@ -101,11 +111,11 @@ function Chart() {
             </div>
         <div className={style.terminal}>
                 <span>Active Agents</span>
-                <p>1,745<span>/4,253</span></p>
+                <p>501<span>/Min</span></p>
             </div>
         <div className={style.terminal}>
                 <span>Acive Managers</span>
-                <p>273<span>/1,123</span></p>
+                <p>90<span>/150</span></p>
             </div>
         {/* <div className={style.terminal}>
                 <span>Active Transactions</span>
@@ -141,15 +151,11 @@ function Chart() {
     <div className={style.navigate}>
          <div className={style.manager}>
            <div className={style.blue}></div>
-           <p>AGENT MANAGERS</p>
+           <p>AGENTS</p>
         </div>
 
         <div className={style.manager}>
            <div className={style.orange}></div>
-           <p>AGENT</p>
-        </div>
-        <div className={style.manager}>
-           <div className={style.green}></div>
            <p>TERMINALS</p>
         </div>
     </div>
@@ -180,7 +186,7 @@ function Chart() {
            <p>ABC Limited</p>
         </div>
         <div className={style.manager}>
-           <div className={style.green}></div>
+           <div className={style.gra}></div>
            <p>TM30 Global</p>
         </div>
         <div className={style.manager}>
@@ -191,7 +197,7 @@ function Chart() {
        
 
     </div>
-    <p style={{textAlign:"end", color:"blue", cursor:"pointer"}}>View Full Report <AiOutlineArrowRight size={15}/></p>
+    <p style={{textAlign:"end", color:"blue", cursor:"pointer"}}>View Full Report <AiOutlineArrowRight size={13}/></p>
     </div>
 
 </div>
