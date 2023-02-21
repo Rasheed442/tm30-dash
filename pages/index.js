@@ -54,7 +54,7 @@ function login() {
         <Image src='/eclipse.png'alt='' width={700} height={200} priority/>
 
         <div className={style.container}>
-          <Image src="/Frame.png" alt='' width={600} height={400} priority/>
+          <img src="/Frame.png" alt='' width={600} height={400} priority/>
            <div className={style.main}>
               <div>
                 <h2>Login</h2><br/>
