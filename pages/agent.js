@@ -26,16 +26,16 @@ function agent() {
     const [assignterminal, setAssignterminal] = useState(false)
     const [allagents, setAllagents] = useState([])
     const [value, setValue] = useState("Agents")
+
     const config = {
       headers:{
         Authorization: `Bearer ${token}`
       }
     }
-
     useEffect(() => {
       Axios.get("http://89.38.135.41:9800/manager/agents/all", config).then((response)=>{
-        console.log(response.data)
-        setAllagents(response.data.getallagents)
+        console.log(response?.data)
+        setAllagents(response?.data?.getallagents)
       })
       
     }, [])
@@ -76,11 +76,11 @@ function agent() {
              <AiOutlineSearch size={20} style={{marginBottom:"-6px", color:"gray"}}/>
              <input type="text" placeholder='Search Terminals ID, Agent and Agent Managers'/>
         </div>
-          {color?"":<div className={style.agent}>
-               <p onClick={()=> {setOpen(true)}}><AiOutlinePlus/> Add New Agent</p>
+          {color?"":<div className={style.agent} onClick={()=> {setOpen(true)}}>
+               <p ><AiOutlinePlus/> Add New Agent</p>
           </div>}       
-          {color ?<div className={style.agent}>
-               <p onClick={()=> {setAssignterminal(true)}}><AiOutlinePlus/> Assign New Terminal</p>
+          {color ?<div className={style.agent} onClick={()=> {setAssignterminal(true)}}>
+               <p><AiOutlinePlus/> Assign New Terminal</p>
           </div>:""}       
       </div>
       <div className={style.head}>

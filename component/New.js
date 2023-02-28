@@ -3,6 +3,7 @@ import style from "../styles/new.module.css"
 import {AiFillCaretDown, AiOutlineClose} from "react-icons/ai"
 import Axios from "axios"
 import Sidebar from './Sidebar'
+import ClipLoader from "react-spinners/ClipLoader";
 import Aos from "aos";
 import "aos/dist/aos.css";
 function New({handle}) {
@@ -14,6 +15,8 @@ function New({handle}) {
       const [state, setState] = useState()
       const [region, setRegion] = useState()
       const [email, setEmail] = useState()
+      const [loading , setLoading] = useState(false)
+      const [color, setColor]=useState("white")
 
      const token = JSON.parse(localStorage.getItem('token'))
        
@@ -21,6 +24,7 @@ function New({handle}) {
   
     async function submithandler(e){
       e.preventDefault();
+      setLoading(true)
         const response = await fetch ("http://89.38.135.41:9800/manager/create/agent",{
           method:"POST",
           headers:{
@@ -31,6 +35,8 @@ function New({handle}) {
         })
         const server = await response.json();
         console.log(server)
+        setLoading(false)
+        handle(false)
      }
        
      useEffect(() => {
@@ -80,7 +86,7 @@ function New({handle}) {
               </div>
               
               <div className={style.btn}>
-                  <button onClick={submithandler}>Submit</button>
+            <button onClick={submithandler}> {loading ?<ClipLoader loading={loading} size={20} color={color}/>:"Submit"}</button>
               </div>
 
           </div>

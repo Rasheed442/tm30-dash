@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from '../component/Sidebar'
-import style from "../styles/setting.module.css"
+import style from "../styles/profile.module.css"
 import {AiOutlineSearch,AiTwotoneBell,AiOutlineDown,AiTwotoneLock } from "react-icons/ai"
 import Image from 'next/image'
 function setting() {

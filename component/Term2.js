@@ -9,7 +9,7 @@ import {TiArrowUnsorted} from "react-icons/ti"
 import { icons } from 'react-icons/lib'
 function Term2({check, data}) {
   console.log(data)
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(1)
     const [isAgent, setisAgent] = useState()
     const [toggle , setToggle] = useState(true)
   return (
@@ -28,17 +28,22 @@ function Term2({check, data}) {
             </thead>
           
              {
-              data.map((d)=>{
+              data && data?.map((d)=>{
                  return(
                     <tbody>
                          <tr>
-                         <td>{d.fullname}</td>
-                        <td>{d._id}</td>
-                        <td>{d.phonenumber}</td>
-                        <td>{d.business_name}</td>
-                        <td>{d.email}</td>
-                        <td>{d.address}</td>
-                        <td>{d.status == 'INACTIVE' ? (<MdToggleOff  size={25}/>) : <MdToggleOn style={{color:"green"}} size={25}/>}</td>
+                         <td>{d?.fullname}</td>
+                        <td>{d?._id}</td>
+                        <td>{d?.phonenumber}</td>
+                        <td>{d?.business_name}</td>
+                        <td>{d?.email}</td>
+                        <td>{d?.address}</td>
+                        <td>
+                          <div>
+                            {toggle ?<MdToggleOff  size={25} onClick={()=> setToggle(false)}/> :
+                            <MdToggleOn style={{color:"green"}} size={25} onClick={()=> setToggle(true)}/>}
+                          </div>
+                          </td>
                     </tr>
                     </tbody>
                    
@@ -51,8 +56,8 @@ function Term2({check, data}) {
                  <span>Showing 1 to 5 of 100 entries</span>
              <div className={styles.btn}>
                  <button style={{border:"1px solid red", color:"red"}} onClick={()=>{
-                  if(counter === 0){
-                    setCounter(0)
+                  if(counter === 1){
+                    setCounter(1)
                   }
                 setCounter(counter-1)
               }}><AiOutlineArrowLeft/>&nbsp;Previous</button>

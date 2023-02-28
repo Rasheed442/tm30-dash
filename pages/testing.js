@@ -1,59 +1,61 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, XAxis, YAxis,Tooltip} from 'recharts';
+import Updatetransactionlimit from '../component/Updatetransactionlimit'
 
-const data = [
-  {
-    name: 'JAN',
-    pv: 400,
-  },
-  {
-    name: 'FEB',
-    pv: 300,
-  },
-  {
-    name: 'MAR',
-    pv: 200,
-  },
-  {
-    name: 'APR',
-    pv: 300,
-  },
-  {
-    name: 'MAY',
-    pv: 400,
-  },
-  {
-    name: 'JUL',
-    pv: 300,
-  },
-  {
-    name: 'AUG',
-    pv: 300,
-  },
-  {
-    name: 'SEP',
-    pv: 100,
-  },
-  {
-    name: 'OCT',
-    pv: 200,
-  },
+// const data = [
+//   {
+//     name: 'JAN',
+//     pv: 400,
+//   },
+//   {
+//     name: 'FEB',
+//     pv: 300,
+//   },
+//   {
+//     name: 'MAR',
+//     pv: 200,
+//   },
+//   {
+//     name: 'APR',
+//     pv: 300,
+//   },
+//   {
+//     name: 'MAY',
+//     pv: 400,
+//   },
+//   {
+//     name: 'JUL',
+//     pv: 300,
+//   },
+//   {
+//     name: 'AUG',
+//     pv: 300,
+//   },
+//   {
+//     name: 'SEP',
+//     pv: 100,
+//   },
+//   {
+//     name: 'OCT',
+//     pv: 200,
+//   },
 
-  {
-    name: 'NOV',
-    pv: 300,
-  },
-  {
-    name: 'DEC',
-    pv: 200,
-  },
-];
+//   {
+//     name: 'NOV',
+//     pv: 300,
+//   },
+//   {
+//     name: 'DEC',
+//     pv: 200,
+//   },
+// ];
 
 export default class Example extends PureComponent {
 
   render() {
     return (
-        <BarChart
+      <>
+        {/* <BarChart
           width={700}
           height={300}
           data={data}
@@ -69,8 +71,9 @@ export default class Example extends PureComponent {
           <YAxis />
           <Tooltip />
           <Bar dataKey="pv" fill="orange" background={{ fill: '#eee' }} />
-        </BarChart>
-      
+        </BarChart> */}
+        <Updatetransactionlimit/>
+      </>
     );
   }
 }

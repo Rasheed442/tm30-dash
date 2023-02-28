@@ -21,7 +21,6 @@
         "path":"/agent",
         "background":"ghostwhite",
         "color":"#1B59F8"
-
     },
     {
         "icon":"analytics.png",
@@ -42,19 +41,33 @@
     {
         "icon":"set.png",
         "name":"Settings",
-        "path":"/setting",
+        "path":"/commission",
         "background":"ghostwhite",
-        "color":"#1B59F8"
+        "color":"#1B59F8",
+        "minilinks":[
+            {
+                "name":"commission",
+                "path":"/commission",
+                "background":"ghostwhite",
+                "color":"#1B59F8"
+            },
+            {
+                "name":"Transaction Limits",
+                "path":"/transactionlimit",
+                "background":"ghostwhite",
+                "color":"#1B59F8"
+            },
+            {
+                "name":"Profile",
+                "path":"/profile",
+                "background":"ghostwhite",
+                "color":"#1B59F8"
+        
+            }
+        ]
 
     },
-    {
-        "icon":"set.png",
-        "name":"Commission",
-        "path":"/setting",
-        "background":"ghostwhite",
-        "color":"#1B59F8"
-
-    },
+  
     {
         "icon":"disputes.png",
         "name":"Disputes",

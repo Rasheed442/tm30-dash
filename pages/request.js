@@ -1,10 +1,11 @@
 import React,{useState} from 'react'
 import Sidebar from '../component/Sidebar'
-import style from "../styles/dispute.module.css"
+import style from "../styles/reporting.module.css"
 import {AiTwotoneBell,AiOutlineDown,AiOutlineArrowRight} from "react-icons/ai"
 import Image from 'next/image'
 import Link from 'next/link'
 import { MdSearch } from 'react-icons/md'
+import { BsFilter,BsDownload } from 'react-icons/bs'
 // import disputes from "./dispute.json"
 import Table from '../component/Table'
 import Caution from '../component/Caution'
@@ -24,7 +25,7 @@ function dispute() {
         <Sidebar/>
         <div className={style.container}>
           <div className={style.main}>
-        <h2>Dispute</h2>
+        <h2>Reporting</h2>
 
           <div className={style.profile}>
               <div className={style.reminder}>
@@ -43,12 +44,30 @@ function dispute() {
       <div className={style.gray}>
           <div className={style.white}>
              <div className={style.header}>
-              <p>Agent Transaction Dispute</p>
+              <p>Reporting</p>
                <div className={style.search}>
-                  <MdSearch size={20} style={{color:"#lightgray"}}/>
+                  <MdSearch size={20} style={{color:"gray"}}/>
                   <input placeholder='Search Agent name, Agent ID, Business name e.tc'/>
                </div>
+               <div className={style.filter}>
+               <button>Filter <BsFilter size={20} style={{color:"#1B59F8"}}/></button>
+               </div>
              </div>
+
+            <div className={style.main}>
+             <div className={style.zone}>
+                <div className={style.state}>
+                  <p>STATE DATE</p>
+                  <input type="date"/>
+                </div>
+                <div className={style.state}>
+                  <p>END DATE</p>
+                  <input type="date"/>
+                </div>
+            </div>
+             {/* <button><BsDownload/> Download Report</button> */}
+          </div>
+
 
     <Table 
     isClick={() => setShow(true) }
@@ -60,11 +79,11 @@ function dispute() {
         <div className={style.entries}>
           <p>Showing 1 to 50 of 100 entries</p>
           <div className={style.btn}>
-            <button style={{backgroundColor:"transparent",border:"1px solid red", color:"red"}}onClick={()=>{
+            <button style={{backgroundColor:"transparent",border:"1px solid red",color:"red"}}onClick={()=>{
               setCounter(counter-1)
             }}>Previous</button>
-            <button style={{border:"1px solid blue"}}>{counter}</button>
-            <button style={{backgroundColor:"transparent",border:"1px solid gray",color:"blue", width:"5em"}} onClick={()=>{
+            <button style={{border:"1px solid gray"}}>{counter}</button>
+            <button style={{backgroundColor:"transparent",border:"1px solid blue",color:"blue", width:"5em"}} onClick={()=>{
               setCounter(counter+1)
             }}>Next <AiOutlineArrowRight/></button>
           </div>

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {AiOutlineSearch,AiTwotoneBell,AiOutlineDown} from "react-icons/ai"
 import {MdStackedLineChart} from "react-icons/md"
 import {BiLineChartDown} from "react-icons/bi"
@@ -6,14 +6,30 @@ import {AiOutlineMenu} from "react-icons/ai"
 import Image from 'next/image'
 import Chart from '../component/Chart'
 import Link from 'next/link'
+import Axios from 'axios'
 import style from "../styles/dashboard.module.css"
 import Sidebar from '../component/Sidebar'
 function Main() {
     const [show, setShow] = useState(false)
+    const [data, setData] = useState([])
     const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
     const logo = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("logo")) : "/profile.png/"
-    console.log('logo',logo)
+    const token = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('token')) : null
+    // console.log('logo',logo)
  
+
+    const config = {
+      headers:{
+        Authorization: `Bearer ${token}`
+      }
+    }
+    useEffect(() => {
+      Axios.get("http://89.38.135.41:9800/dashboard", config).then((response)=>{
+        setData(response?.data)
+      })
+      
+    }, [])
+    console.log(data)
   return (
     <>
     <div className={style.topp}>
@@ -64,8 +80,8 @@ function Main() {
 
 <div className={style.gridout}>
 <div className={style.transaction}>
- <h5>Total Transactions(Naira)</h5>
- <h4><span style={{fontSize:"25px", fontWeight:"800"}}>#</span>500,000,783</h4>
+ <h5>Total Transactions</h5>
+ <h4><span style={{fontSize:"20px", fontWeight:"800"}}>&#8358;&nbsp;</span>500,000,783</h4>
  <p><span style={{color:"green"}}><Image src="/Vector.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/frame 4.png"width={50} height={50} priority/>
@@ -74,7 +90,7 @@ function Main() {
 <div className={style.gridout}>
 <div className={style.transaction}>
  <h5>Total Earnings/Commission</h5>
- <h4><span style={{fontSize:"25px", fontWeight:"800"}}>#</span>80,131,139</h4>
+ <h4><span style={{fontSize:"20px", fontWeight:"800"}}>&#8358;&nbsp;</span></h4>
  <p><span style={{color:"red"}}><Image src="/vecdown.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/frame3.png" width={50} height={50} priority/>
@@ -101,7 +117,7 @@ function Main() {
 <div className={style.gridout}>
 <div className={style.transaction}>
  <h5>Total Number of Agents</h5>
- <h4>1,123</h4>
+ <h4></h4>
  <p><span style={{color:"green"}}><Image src="/Vector.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/frame2.png" width={50} height={50} priority/>

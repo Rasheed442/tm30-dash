@@ -4,13 +4,18 @@
     display: flex;
     padding-top: 3rem;
     flex-direction: column;
-    gap: 30px;
-    width: 15rem;
+    gap: 10px;
+    padding-left: 0;
+    /* width: 15rem; */
     /* position: fixed; */
 }
 .head{
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 20px;
     color: gray;
 }
 .head p{
@@ -21,7 +26,8 @@
     padding: 20px;
     justify-content: space-between;
     border-top: 2px solid gainsboro;
-    margin-top: 10rem;
+    margin-top: 5rem;
+    gap: 30px;
 }
 .exit1 h4{
     color: gray;
@@ -48,14 +54,15 @@
     color: black;
 }
 .top{
-    gap: 20px;
     background-color: #E3F6FF;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
     width: 13rem;
     color: red;
     border-left: 5px solid #1B59F8;
-    padding: 10px;
+}
+.top2{
+    color: #1B59F8;
 }
 @media screen and (max-width:1427px) {
     .container{

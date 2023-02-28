@@ -26,7 +26,7 @@ function Chart() {
             responsive:true
         }
     }
-    console.log(data.labels)
+    // console.log(data.labels)
     const pie = {
         labels:["20%","80%"],
         datasets:[{

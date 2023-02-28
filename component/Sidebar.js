@@ -15,7 +15,6 @@ function Sidebar({change}) {
         </div>
       
 
-<div>
   <div className={style.exit1}>
       <div className={style.profile}>
       <h4>My Referral Code</h4>
@@ -32,7 +31,6 @@ function Sidebar({change}) {
        <MdOutlineExitToApp size={30} style={{color:"#FF3A3A", cursor:"pointer"}}/>
     </div> </Link>
 
-</div>
   
  </div>   
 

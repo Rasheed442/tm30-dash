@@ -1,7 +1,7 @@
 import React from 'react'
 import style from "../styles/dispute.module.css"
 import disputes from "../pages/dispute.json"
-import {AiOutlineDown} from "react-icons/ai"
+import {TiArrowUnsorted} from "react-icons/ti"
 // import Caution from '../component/Caution'
 function Table({handleOne,isClick}) {
   return (
@@ -9,14 +9,14 @@ function Table({handleOne,isClick}) {
         <table className={style.table}>
                       <thead>
                             <tr>
-                               <th>AGENT NAME</th>
-                               <th>AGENT ID</th>
-                               <th>PHONE NUMBER</th>
-                               <th>AGENT BUSINESS NAME</th>
-                               <th>AGENT EMAIL ADDRESS</th>
-                               <th>TRANSACTION DISPUTES CONTENT</th>
-                               <th>ACTION</th>
-                               <th>RESOLVED STATUS</th>
+                               <th>AGENT NAME <TiArrowUnsorted size={12}/></th>
+                               <th>AGENT ID  <TiArrowUnsorted size={12}/></th>
+                               <th>PHONE NUMBER  <TiArrowUnsorted size={12}/></th>
+                               <th>AGENT BUSINESS NAME  <TiArrowUnsorted size={12}/></th>
+                               <th>AGENT EMAIL ADDRESS  <TiArrowUnsorted size={12}/></th>
+                               <th>TRANSACTION DISPUTES CONTENT  <TiArrowUnsorted size={12}/></th>
+                               <th>ACTION  <TiArrowUnsorted size={12}/></th>
+                               <th>RESOLVED STATUS  <TiArrowUnsorted size={12}/></th>
                          </tr>   
                         </thead>
                       

@@ -10,7 +10,7 @@ function login() {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [loading , setLoading] = useState(false)
-    
+    const [color, setColor]=useState("white")
     const [datamessage, setdataMessage] = useState()
 
     const auth = {email, password}
@@ -86,7 +86,7 @@ function login() {
                 </div>
                  
                  <div className={style.btn} onClick={submithandler}>
-                      <button> {loading ?<ClipLoader loading={loading} size={20} />:"Login"}</button>
+                      <button> {loading ?<ClipLoader loading={loading} size={20} color={color}/>:"Login"}</button>
                       {/* {datamessage} */}
                  </div>
 
