@@ -1,17 +1,15 @@
 .background{
     background-color: white;
-    padding: 20px;
     border-radius: 10px;
 }
 .container{
-    padding: 15px;
     padding-top: 20px;
 }
 .transact{
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgb(221, 217, 217);
-    padding: 10px;
+    padding: 30px;
     color: gray;
 }
 .transact p{
@@ -47,6 +45,7 @@
 .gridout{
     display: flex;
     justify-content: space-between;
+    padding: 20px;
 }
 .footer{
     display: flex;

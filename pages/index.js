@@ -34,9 +34,10 @@ function login() {
         localStorage.setItem('userName', JSON.stringify(server?.data?.name))
         localStorage.setItem('token', JSON.stringify(server?.token))
         localStorage.setItem('logo', JSON.stringify(server?.data?.logo))
+        localStorage.setItem('referralcode', JSON.stringify(server?.data?.my_referral_code))
 
         if(server.status){
-          toast.success(`Welcome Back! ${server?.data?.name}`)
+          toast.success(`Welcome! ${server?.data?.name}`)
           setLoading(false)
           setTimeout(() => {
             window.location="/dashboard"

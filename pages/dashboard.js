@@ -15,9 +15,9 @@ function Main() {
     const [commission, setCommission] = useState([])
     const [agent, setAgent] = useState([])
     const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
-    const logo = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("logo")) : "/profile.png/"
+    const logo = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("logo")) : ""
     const token = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('token')) : null
-    // console.log('logo',logo)
+    console.log(logo)
  
 
     const config = {
@@ -52,7 +52,6 @@ function Main() {
    <div className={style.profile}>
        <div className={style.reminder}>
          <AiTwotoneBell size={27} style={{backgroundColor:"gainsboro", color:"gray", borderRadius:"10px"}}/>
-          {/* <Image src="/dot.png" width={20} height={20} priority /> */}
           <div></div>
        </div>
       <div className={style.line}></div>          

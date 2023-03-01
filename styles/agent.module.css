@@ -208,3 +208,9 @@
  border-radius: 5px;
  justify-content: center;
 } 
+.odd{
+    background-color: red;
+}
+.datarow{
+    background-color: green;
+}

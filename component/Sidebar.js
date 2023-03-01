@@ -6,6 +6,8 @@ import {AiOutlineUser} from "react-icons/ai"
 import Link from 'next/link'
 import Testing from '../component/Testing'
 function Sidebar({change}) {
+  const referralcode = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("referralcode"))  : null
+
   return (
  <div className={style.container}>
 
@@ -18,7 +20,7 @@ function Sidebar({change}) {
   <div className={style.exit1}>
       <div className={style.profile}>
       <h4>My Referral Code</h4>
-      <span>AGB23294812</span>
+      <span>{referralcode}</span>
     </div>
        <MdContentCopy size={30} style={{color:"#084074", cursor:"pointer"}}/>
     </div>  
