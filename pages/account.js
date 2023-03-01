@@ -40,14 +40,14 @@ function account() {
       setData(response?.data)
     })
   }, [])
-// console.log(data)
+console.log(data)
   
-useEffect(() => {
-  Axios.get("http://89.38.135.41:9800/manager/agents/all", config).then((response)=>{
-    setAgentdata(response?.data?.getallagents)
-  }) 
-}, [])
-console.log(allagents)
+// useEffect(() => {
+//   Axios.get("http://89.38.135.41:9800/manager/agents/all", config).then((response)=>{
+//     setAgentdata(response?.data?.getallagents)
+//   }) 
+// }, [])
+// console.log(allagents)
 
   useEffect(() => {
     Aos.init({ duration: 1000});

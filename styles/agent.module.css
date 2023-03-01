@@ -159,6 +159,29 @@
     color: #969494;
     font-size: 13px;
 }
+
+.table{
+    border-collapse: collapse;
+    font-size: 11.5px;
+    width: 100%;
+}
+.table th{
+    font-weight: 500;
+    text-align: left;
+    color: gray;
+    
+    font-size: 10px;
+    padding: 10px;
+    background-color: whitesmoke;
+}
+.table tr{
+    width: 100%;
+    padding: 20px;
+}
+.table td{
+    padding: 10px;
+}
+
 .btn{
     display: flex;
     gap: 15px;

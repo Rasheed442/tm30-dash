@@ -26,6 +26,7 @@ function agent() {
     const [assignterminal, setAssignterminal] = useState(false)
     const [allagents, setAllagents] = useState([])
     const [value, setValue] = useState("Agents")
+    const [search, setSearch] = useState()
 
     const config = {
       headers:{
@@ -87,7 +88,7 @@ function agent() {
          <p onClick={(e)=>{setColor(false),setColor2(true), setValue(e.target.textContent)}} style={{backgroundColor: color ? "transparent":"#1B59F8", color:color ? "gray":""}}>Agents </p>
          <span onClick={(e)=>{setColor(true),setColor2(false),setValue(e.target.textContent)}} style={{backgroundColor: color ?"#1B59F8":"", color:color ?"white":""}}>Terminals</span>
     </div>
-    {color2 ?<Term2 data={allagents} check={setTerminal} />:""} 
+    {color2 ?<Term2 data={allagents} search={search} check={setTerminal} />:""} 
        {color ?<Term check={setTerminal}/>:""}
        </div>
        </div>

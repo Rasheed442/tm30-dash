@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react'
-import style from "../styles/dispute.module.css"
 import styles from "../styles/agent.module.css"
 import {AiOutlineDown,AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai"
 import {BsToggleOn,BsToggleOff} from "react-icons/bs"
@@ -7,14 +6,14 @@ import {MdToggleOn,MdToggleOff} from "react-icons/md"
 import Terminal from './Terminal'
 import {TiArrowUnsorted} from "react-icons/ti"
 import { icons } from 'react-icons/lib'
-function Term2({check, data}) {
+function Term2({search, data}) {
   console.log(data)
     const [counter, setCounter] = useState(1)
     const [isAgent, setisAgent] = useState()
     const [toggle , setToggle] = useState(true)
   return (
     <div>
-          <table className={style.table}>
+          <table className={styles.table}>
           <thead>
                 <tr>
                    <th>AGENT NAME <TiArrowUnsorted size={12}/></th>
@@ -61,7 +60,7 @@ function Term2({check, data}) {
                   }
                 setCounter(counter-1)
               }}><AiOutlineArrowLeft/>&nbsp;Previous</button>
-              <div className={style.btn1}>
+              <div className={styles.btn1}>
                 <button>{counter}</button>
               </div>
               <button  style={{border:"1px solid #1B59F8", color:"#1B59F8"}} onClick={()=>{

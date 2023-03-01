@@ -4,6 +4,9 @@ import Image from 'next/image'
 import {AiFillEyeInvisible,AiFillEye} from "react-icons/ai"
 import ClipLoader from "react-spinners/ClipLoader";
 import Link from 'next/link'
+import {toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 function login() {
     const [see, setSee] = useState(true)
     const [see1, setSee1] = useState(true)
@@ -12,9 +15,7 @@ function login() {
     const [loading , setLoading] = useState(false)
     const [color, setColor]=useState("white")
     const [datamessage, setdataMessage] = useState()
-
     const auth = {email, password}
-
     // ${process.env.BASEURL}
  
       async function submithandler(e){
@@ -33,21 +34,27 @@ function login() {
         localStorage.setItem('userName', JSON.stringify(server?.data?.name))
         localStorage.setItem('token', JSON.stringify(server?.token))
         localStorage.setItem('logo', JSON.stringify(server?.data?.logo))
+
         if(server.status){
-          window.location="/dashboard"  
+          toast.success(`Welcome Back! ${server?.data?.name}`)
+          setLoading(false)
+          setTimeout(() => {
+            window.location="/dashboard"
+          }, 2000);
+        }else{
+          toast.error("Wrong Email or Password!")
+          setLoading(false)
         }
-        setLoading(false)
+       
+        if(email === undefined || null && password === undefined || null){
+          toast("Invalid input")
+        } 
+  
       }
-      //   console.log(auth)
-      //   const mymail = "rasheed@gmail.com"
-      //   const mypassword = "123456"
-      //   // window.location="/dashboard"
-      //   if(email  === mymail && password === mypassword){
-      //     window.location="/dashboard"
-      //   }else{
-      //     alert("wrong email or password")
-      //   }
-      // }
+  
+    
+
+  
       
   return (
     <div className={style.background}>
@@ -60,7 +67,6 @@ function login() {
                 <h2>Login</h2><br/>
                <p>name of company.logo</p>
               </div>
-               
                <div className={style.user}>
                   <label>Username or Email</label>
                   <input type="email"placeholder='Enter your username or Email' onChange={(e)=> setEmail(e.target.value)}/>

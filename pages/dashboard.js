@@ -12,6 +12,8 @@ import Sidebar from '../component/Sidebar'
 function Main() {
     const [show, setShow] = useState(false)
     const [data, setData] = useState([])
+    const [commission, setCommission] = useState([])
+    const [agent, setAgent] = useState([])
     const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
     const logo = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("logo")) : "/profile.png/"
     const token = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('token')) : null
@@ -26,6 +28,7 @@ function Main() {
     useEffect(() => {
       Axios.get("http://89.38.135.41:9800/dashboard", config).then((response)=>{
         setData(response?.data)
+     
       })
       
     }, [])
@@ -90,7 +93,7 @@ function Main() {
 <div className={style.gridout}>
 <div className={style.transaction}>
  <h5>Total Earnings/Commission</h5>
- <h4><span style={{fontSize:"20px", fontWeight:"800"}}>&#8358;&nbsp;</span></h4>
+ <h4><span style={{fontSize:"20px", fontWeight:"800"}}>&#8358;&nbsp;</span>{data?.data?.balance?.commission}</h4>
  <p><span style={{color:"red"}}><Image src="/vecdown.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/frame3.png" width={50} height={50} priority/>
@@ -117,7 +120,7 @@ function Main() {
 <div className={style.gridout}>
 <div className={style.transaction}>
  <h5>Total Number of Agents</h5>
- <h4></h4>
+ <h4>{data?.data?.total_agent}</h4>
  <p><span style={{color:"green"}}><Image src="/Vector.png" width={15} height={10}/> 1.3%</span> up from last week</p>
 </div>
 <Image src="/frame2.png" width={50} height={50} priority/>
@@ -144,7 +147,7 @@ function Main() {
 <div className={style.gridout}>
 <div className={style.transaction}>
  <h5>Total Referral Bonus</h5>
- <h4><span style={{fontSize:"25px", fontWeight:"800"}}>#</span>66,503</h4>
+ <h4><span style={{fontSize:"25px", fontWeight:"800"}}>&#8358;&nbsp;</span>66,503</h4>
 </div>
 <Image src="/frame1.png" width={50} height={50} priority/>
 </div>

@@ -37,6 +37,7 @@ function New({handle}) {
         console.log(server)
         setLoading(false)
         handle(false)
+        window.location="/agent"
      }
        
      useEffect(() => {
