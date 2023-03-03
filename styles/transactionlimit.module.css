@@ -67,7 +67,16 @@
     align-items: center;
 }
 .commission p{
-    font-size: 18px;
+    font-size: 16px;
+}
+.commission button{
+    background-color:#1B59F8;
+    color: white;
+    width: 10rem;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 .timer{
     display: flex;
@@ -87,7 +96,9 @@
 }
 .flexout{
     display: flex;
-    gap: 30%;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 .transaction{
     display: flex;
@@ -100,8 +111,7 @@
 }
 .transaction p{
     font-size: 13px;
-    display: flex;
-    justify-content: flex-end;
+    text-align: right;
     color: #7E7E7E;
 }
 .limits{

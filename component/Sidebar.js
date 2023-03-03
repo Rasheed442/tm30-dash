@@ -4,7 +4,10 @@ import {RxDashboard} from "react-icons/rx"
 import {MdSupervisorAccount,MdOutlineExitToApp,MdMiscellaneousServices,MdContentCopy,MdReportGmailerrorred} from "react-icons/md"
 import {AiOutlineUser} from "react-icons/ai"
 import Link from 'next/link'
+import {toast } from 'react-toastify'
 import Testing from '../component/Testing'
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 function Sidebar({change}) {
   const referralcode = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("referralcode"))  : null
 
@@ -17,7 +20,7 @@ function Sidebar({change}) {
         </div>
       
 
-  <div className={style.exit1}>
+  <div className={style.exit1} onClick={() => {navigator.clipboard.writeText(referralcode), toast("copied")}}>
       <div className={style.profile}>
       <h4>My Referral Code</h4>
       <span>{referralcode}</span>

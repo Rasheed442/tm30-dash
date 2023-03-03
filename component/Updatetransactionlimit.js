@@ -37,12 +37,15 @@ function Setcommission({cancelUpdate}) {
                 <p>Set New Limit</p>
              </div>
            </div>
+              
+
         </div>   
 
-    <div className={style.submit}> 
-          <button>Update</button>      
+        <div className={style.submit}>
+              <button>Update</button>   
+        </div>
+    
 
-    </div>
     
         </div>
     </div>

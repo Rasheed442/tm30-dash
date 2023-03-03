@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, XAxis, YAxis,Tooltip} from 'recharts';
 import Updatetransactionlimit from '../component/Updatetransactionlimit'
+import Updateall from '../component/Updateall'
 
 // const data = [
 //   {
@@ -72,7 +73,7 @@ export default class Example extends PureComponent {
           <Tooltip />
           <Bar dataKey="pv" fill="orange" background={{ fill: '#eee' }} />
         </BarChart> */}
-        <Updatetransactionlimit/>
+        <Updateall/>
       </>
     );
   }

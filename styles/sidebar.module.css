@@ -14,6 +14,7 @@
     gap: 10px;
     padding-left: 20px;
     padding-bottom: 10px;
+    width: 13rem;
     padding-top: 10px;
     padding-right: 20px;
     color: gray;
@@ -55,13 +56,15 @@
     color: black;
 }
 .top{
-    background-color: #E3F6FF;
+    background-color: #E8EEFE;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     width: 13rem;
-    color: red;
     border-left: 5px solid #1B59F8;
 }
+/* .top p{
+    color: #1B59F8;
+} */
 .top2{
     color: #1B59F8;
 }

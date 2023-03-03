@@ -32,6 +32,7 @@ function login() {
         setdataMessage(server.message)
         console.log(server.message)
         localStorage.setItem('userName', JSON.stringify(server?.data?.name))
+        localStorage.setItem('transactioncap', JSON.stringify(server?.data?.allow_set_transactioncap))
         localStorage.setItem('token', JSON.stringify(server?.token))
         localStorage.setItem('logo', JSON.stringify(server?.data?.logo))
         localStorage.setItem('referralcode', JSON.stringify(server?.data?.my_referral_code))
@@ -48,7 +49,7 @@ function login() {
         }
        
         if(email === undefined || null && password === undefined || null){
-          toast("Invalid input")
+          toast.warn("Invalid input")
         } 
   
       }
