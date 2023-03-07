@@ -6,10 +6,12 @@
 .container{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
 }
 .profile{
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 .reminder img{
@@ -18,7 +20,11 @@
 }
 .name span{
     color: gray;
-    font-size: 15px
+    font-size: 13px
+
+}
+.name p{
+    text-transform:  capitalize;
 }
 .line{
     width: 2px;
@@ -30,13 +36,12 @@
      width: 30rem;
      outline: none;
      font-size: 15px;
-     padding: 10px;
 }
 .search{
     border: 1px solid gray;
     padding: 5px;
     border-radius: 20px;
-    height: 50px;
+    height: 30px;
 }
 /* header styling */
 .background{
@@ -48,18 +53,32 @@
 }
 .bg{
     background-color: whitesmoke;
-    height: 100vh;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .bg button{
-    background-color: #1B59F8;
-    padding: 5px;
-    width: 6rem;
-    border: none;
-    color: white;
-    border-radius: 5px;
+    color: #1B59F8;
+    background-color: transparent;
     cursor: pointer;
+    display: flex;
+    padding-left: 20px;
+    font-size: 15px;
+    align-items: center;
+    border: none;
+    gap: 5px;
+}
+.transactionlimit{
+    padding-left: 20px;
+}
+.transactionlimit button{
+    width: 10rem;
+    padding: 5px;
+    font-weight: 500;
+    border-radius: 3px;
+    display: flex;
+    color: #1B59F8;
+    justify-content: center;
+    border: 1px solid #1B59F8;
 }
 .wallet{
     background-color: white;
@@ -68,7 +87,7 @@
     flex-direction: column;
     padding: 15px;
     gap: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .wallet h5{
     color: green;
@@ -76,11 +95,12 @@
 
 }
 .wallet p{
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 500;
 }
 .wallet span{
-    color: gray;
-    font-size: 13px;
+    color: #a5a3a3;
+    font-size: 11px;
 }
 .balance{
     display: flex;
@@ -91,16 +111,19 @@
 .service{
     background-color: white;
     margin: 20px;
-    padding: 15px;
-    height: 14rem;
-    border-radius: 20px;
+    padding: 25px;
+    gap: 20px;
+    border-radius: 10px;
 }
 .service p{
     cursor: pointer;
 }
 .services{
     display: flex;
+    align-items: center;
     gap: 30px;
+    color: gray;
+    padding-bottom: 30px;
 }
 /* .services button{
     height: 30px;
@@ -113,25 +136,32 @@
 .service select{
     outline: none;
     border: 1px solid gainsboro;
+    border-radius: 2px;
+    height: 35px;
     padding: 5px;
+    width: 10rem;
+    font-size: 12px;
+    color: gray;
 }
 .dstv{
     border: 1px solid gainsboro;
     border-radius: 10px;
-    padding: 20px;
-    width: 7.5rem;
+    padding: 30px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
 }
 .dstv h2{
-    font-weight: 200;
+    font-weight: 500;
     font-size: 20px;
 }
 .dstv p{
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: 13px;
     cursor: pointer;
 }
 .add{
@@ -168,7 +198,10 @@
 }
  .gridout{
      display: flex;
+     padding: 30px;
      justify-content: space-between;
+     background-color: white;
+     border-radius: 20px;
  }
  .footer{
     display: flex;

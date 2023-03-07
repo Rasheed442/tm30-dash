@@ -6,23 +6,27 @@ import {MdToggleOn,MdToggleOff} from "react-icons/md"
 import Terminal from './Terminal'
 import {TiArrowUnsorted} from "react-icons/ti"
 import { icons } from 'react-icons/lib'
-function Term2({search, data}) {
+function Term2({check, data}) {
   console.log(data)
     const [counter, setCounter] = useState(1)
     const [isAgent, setisAgent] = useState()
     const [toggle , setToggle] = useState(true)
+    const [clientId, setClientId] = useState()
+
+
+
   return (
     <div>
           <table className={styles.table}>
           <thead>
                 <tr>
                    <th>AGENT NAME <TiArrowUnsorted size={12}/></th>
-                   <th>AGENT ID <TiArrowUnsorted size={12}/></th>
+                   <th>AGENT ID </th>
                    <th>PHONE NUMBER <TiArrowUnsorted size={12}/></th>
                    <th>AGENT BUSINESS NAME <TiArrowUnsorted size={12}/></th>
                    <th>EMAIL ADDRESS <TiArrowUnsorted size={12}/></th>
                    <th>ADDRESS <TiArrowUnsorted size={12}/></th>
-                   <th>STATUS <TiArrowUnsorted size={12}/></th>
+                   <th>STATUS </th>
              </tr>   
             </thead>
           
@@ -30,13 +34,17 @@ function Term2({search, data}) {
               data && data?.map((d)=>{
                  return(
                     <tbody>
-                         <tr>
-                         <td>{d?.fullname}</td>
+                         <tr >
+                         <td   onClick={()=>{
+                           setClientId(d?._id);
+                           localStorage.setItem('d.id',JSON.stringify(d?._id))
+                           check(true)
+                         }} style={{textTransform:"capitalize"}}>{d?.fullname}</td>
                         <td>{d?._id}</td>
                         <td>{d?.phonenumber}</td>
-                        <td>{d?.business_name}</td>
+                        <td style={{textTransform:"uppercase"}}>{d?.business_name}</td>
                         <td>{d?.email}</td>
-                        <td>{d?.address}</td>
+                        <td style={{textTransform:"uppercase"}}>{d?.address}</td>
                         <td>
                           <div>
                             {toggle ?<MdToggleOff  size={25} onClick={()=> setToggle(false)}/> :

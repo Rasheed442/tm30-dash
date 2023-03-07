@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react'
 import Sidebar from './Sidebar'
 import style from "../styles/terminal.module.css"
 import {AiOutlineDown,AiTwotoneBell,AiOutlineSearch,AiOutlineArrowRight,AiOutlineArrowLeft} from "react-icons/ai"
+import Axios from 'axios'
 import {BsToggleOn,BsToggleOff} from "react-icons/bs"
 import {MdShowChart} from "react-icons/md"
 import Image from 'next/image'
@@ -10,6 +11,26 @@ import Allservices from './Allservices'
 function Terminal({back,nav}) {
    const [open, setOpen] = useState(false)
    const [allservice, setAllservice] = useState(false)
+   const[clients, setClients] = useState()
+
+   const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
+  const token = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('token')) : null
+  const clientId = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('d.id')) : null
+
+  const config = {
+   headers:{
+     Authorization: `Bearer ${token}`
+   }
+ }
+ useEffect(() => {
+   Axios.get(`http://89.38.135.41:9800/user/agents/details?id=${clientId}`, config).then((response)=>{
+   //   console.log(response?.data)
+     setClients(response?.data)
+   })
+   
+ }, [])
+ console.log(clients?.data?.currency?.symbol)
+
   return (
     <div className={style.background}>
       {allservice ?<Allservices handle={setAllservice}/>:""}
@@ -30,42 +51,45 @@ function Terminal({back,nav}) {
                  <Image src="/dot.png" width={20} height={20} priority />
               </div>
              <div className={style.line}></div>          
-                   <Image src="/profile.png" width={50} height={50} priority/>
+                   <Image src="/profile.png" width={40} height={40} priority/>
              <div className={style.name}>
-                <p>Segun Peters</p>
-                <span>Super Agent</span>
+                <p>{username}<AiOutlineDown size={13}/></p>
+                <span>Agent Manager</span>
              </div>
-             <AiOutlineDown size={15}/>
           </div>
         </div>   
         
 <div className={style.bg}>
-            <button onClick={()=>{back(false)}}><AiOutlineArrowLeft/> Go back</button>
+            <button onClick={()=>{back(false)}}><AiOutlineArrowLeft size={20}/> Back</button>
       <div className={style.balance}>
              <div className={style.wallet}>
                 <span>Wallet Balance</span>
-                <p>#100,000.00</p>
+                <p>{clients?.data?.currency?.symbol} {clients?.data?.balance?.wallet}</p>
                 <h5><MdShowChart/>5.5%<span> up from last week</span></h5>
              </div>
 
              <div className={style.wallet}>
                 <span>Commission</span>
-                <p>#80,131.00</p>
+                <p>{clients?.data?.currency?.symbol} {clients?.data?.balance?.commission}</p>
                 <h5 style={{color:"red"}}><MdShowChart/>2.1%<span> up from last week</span></h5>
              </div>
 
              <div className={style.wallet}>
                 <span>Total Successful Transactions</span>
-                <p>#1,443</p>
+                <p>1,443</p>
                 <h5><MdShowChart/>2.1%<span> up from last week</span></h5>
              </div>
 
              <div className={style.wallet}>
                 <span>Total failed Transactions</span>
-                <p>#288</p>
+                <p> 288</p>
                 <h5><MdShowChart/>2.1%<span> up from last week</span></h5>
              </div>
        </div>
+      
+        <div className={style.transactionlimit}>
+         <button>Transaction Limit</button>
+        </div>
       {/* transaction */}
       
       <div className={style.service}>
@@ -84,27 +108,27 @@ function Terminal({back,nav}) {
 
            <div className={style.dstv}>
               <h2>DSTV</h2>
-             <p>Active <BsToggleOn size={25} style={{color:"#2DCA72"}}/></p>
+             <p>Active <BsToggleOn size={25} style={{color:"#1B59F8"}}/></p>
            </div>
            <div className={style.dstv}>
               <h2>AirTime</h2>
-             <p>Active <BsToggleOff size={25} style={{color:""}}/></p>
+             <p>Active <BsToggleOff size={25} style={{color:"#1B59F8"}}/></p>
            </div>
            <div className={style.dstv}>
               <h2>GOTV</h2>
-             <p>Active <BsToggleOn size={25} style={{color:"#2DCA72"}}/></p>
+             <p>Active <BsToggleOn size={25} style={{color:"#1B59F8"}}/></p>
            </div>
            <div className={style.dstv}>
               <h2>Electricity</h2>
-             <p>Active <BsToggleOn size={25} style={{color:"#2DCA72"}}/></p>
+             <p>Active <BsToggleOn size={25} style={{color:"#1B59F8"}}/></p>
            </div>
            <div className={style.dstv}>
               <h2>FIRS</h2>
-             <p>Active <BsToggleOn size={25} style={{color:"#2DCA72"}}/></p>
+             <p>Active <BsToggleOn size={25} style={{color:"#1B59F8"}}/></p>
            </div>
            <div className={style.dstv}>
               <h2>FRSC</h2>
-             <p>Active <BsToggleOff size={25} style={{color:"#2DCA72"}}/></p>
+             <p>Active <BsToggleOff size={25} style={{color:"#1B59F8"}}/></p>
            </div>
            <div className={style.add} onClick={()=>{setOpen(true)}}>
               <Image src='/add.png' width={50} height={50} priority/>

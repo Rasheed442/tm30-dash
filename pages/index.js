@@ -42,7 +42,7 @@ function login() {
           setLoading(false)
           setTimeout(() => {
             window.location="/dashboard"
-          }, 2000);
+          }, 1000);
         }else{
           toast.error("Wrong Email or Password!")
           setLoading(false)

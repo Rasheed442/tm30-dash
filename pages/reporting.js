@@ -70,10 +70,6 @@ function dispute() {
 
 
     <Table 
-    isClick={() => setShow(true) }
-    handleOne={(id) => {
-      setOneData(disputes?.find(d => d.id === id))
-    }}
     />
         
         <div className={style.entries}>

@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, use} from 'react'
 import {AiOutlineSearch,AiTwotoneBell,AiOutlineDown} from "react-icons/ai"
 import {MdStackedLineChart} from "react-icons/md"
 import {BiLineChartDown} from "react-icons/bi"
@@ -14,25 +14,30 @@ function Main() {
     const [data, setData] = useState([])
     const [commission, setCommission] = useState([])
     const [agent, setAgent] = useState([])
-    const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
-    const logo = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("logo")) : ""
-    const token = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('token')) : null
-    console.log(logo)
- 
 
-    const config = {
-      headers:{
-        Authorization: `Bearer ${token}`
-      }
+
+    const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
+    const token = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('token')) : null
+    // const logo = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("logo")) : ""
+
+
+useEffect(() => {
+
+  const config = {
+    headers:{
+      Authorization: `Bearer ${token}`
     }
-    useEffect(() => {
-      Axios.get("http://89.38.135.41:9800/dashboard", config).then((response)=>{
-        setData(response?.data)
-     
-      })
-      
-    }, [])
+  }
+  Axios.get("http://89.38.135.41:9800/dashboard", config).then((response)=>{
+    setData(response?.data)
     console.log(data)
+  })
+
+}, [])
+
+   
+
+
   return (
     <>
     <div className={style.topp}>
