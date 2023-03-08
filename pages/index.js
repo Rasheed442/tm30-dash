@@ -31,11 +31,11 @@ function login() {
         console.log(server)
         setdataMessage(server.message)
         console.log(server.message)
-        localStorage.setItem('userName', JSON.stringify(server?.data?.name))
-        localStorage.setItem('transactioncap', JSON.stringify(server?.data?.allow_set_transactioncap))
-        localStorage.setItem('token', JSON.stringify(server?.token))
-        localStorage.setItem('logo', JSON.stringify(server?.data?.logo))
-        localStorage.setItem('referralcode', JSON.stringify(server?.data?.my_referral_code))
+        localStorage.setItem('userName', server?.data?.name)
+        localStorage.setItem('transactioncap', server?.data?.allow_set_transactioncap)
+        localStorage.setItem('token', server?.token)
+        localStorage.setItem('logo', server?.data?.logo)
+        localStorage.setItem('referralcode', server?.data?.my_referral_code)
 
         if(server.status){
           toast.success(`Welcome! ${server?.data?.name}`)

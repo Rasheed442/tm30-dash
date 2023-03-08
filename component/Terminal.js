@@ -13,9 +13,9 @@ function Terminal({back,nav}) {
    const [allservice, setAllservice] = useState(false)
    const[clients, setClients] = useState()
 
-   const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
-  const token = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('token')) : null
-  const clientId = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('d.id')) : null
+   const username = typeof window !== 'undefined' ? localStorage.getItem("userName")  : null
+  const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null
+  const clientId = typeof window !== 'undefined' ? localStorage.getItem('d.id') : null
 
   const config = {
    headers:{

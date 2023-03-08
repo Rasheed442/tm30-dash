@@ -16,9 +16,8 @@ function Main() {
     const [agent, setAgent] = useState([])
 
 
-    const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
-    const token = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('token')) : null
-    // const logo = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("logo")) : ""
+    const username = typeof window !== 'undefined' ?localStorage.getItem("userName") : null
+    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null
 
 
 useEffect(() => {
@@ -62,7 +61,7 @@ useEffect(() => {
       <div className={style.line}></div>          
           <Image src="/profile.png" width={40} height={40} priority/>
       <div className={style.name}>
-         <p>{username} <AiOutlineDown/></p>
+         <p>{username} <AiOutlineDown size={12}/></p>
          <span>Agent Manager</span>
       </div>
    </div></Link> 

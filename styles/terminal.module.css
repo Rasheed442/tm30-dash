@@ -167,13 +167,12 @@
 .add{
     border: 1px solid #00A4E4;
     border-radius: 10px;
-    padding: 20px;
-    width: 8rem;
     display: flex;
-    gap: 5px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    width: 100%;
     cursor: pointer;
 }
 .add h2{

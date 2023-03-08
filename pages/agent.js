@@ -14,8 +14,8 @@ import Term2 from '../component/Term2'
 function agent() {
    const [counter, setCounter] = useState(1)
   // counter
-  const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
-  const token = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('token')) : null
+  const username = typeof window !== 'undefined' ? (localStorage.getItem("userName"))  : null
+  const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null
   
 // local storage
   

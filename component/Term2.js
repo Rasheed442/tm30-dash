@@ -39,7 +39,7 @@ function Term2({check, data}) {
                            setClientId(d?._id);
                            localStorage.setItem('d.id',JSON.stringify(d?._id))
                            check(true)
-                         }} style={{textTransform:"capitalize"}}>{d?.fullname}</td>
+                         }} style={{textTransform:"capitalize", cursor:"pointer"}}>{d?.fullname}</td>
                         <td>{d?._id}</td>
                         <td>{d?.phonenumber}</td>
                         <td style={{textTransform:"uppercase"}}>{d?.business_name}</td>

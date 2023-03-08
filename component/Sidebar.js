@@ -9,7 +9,8 @@ import Testing from '../component/Testing'
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 function Sidebar({change}) {
-  const referralcode = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("referralcode"))  : null
+
+  const referralcode = typeof window !== "undefined" ? window.localStorage.getItem("referralcode") : false   
 
   return (
  <div className={style.container}>
