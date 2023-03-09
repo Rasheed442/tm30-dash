@@ -113,17 +113,17 @@ function setting() {
         </div>:""}
 
         {electricity ?<div className={style.electric}>
-            <Image src="/ikeja.png" width={150} height={150} priority/>
-            <Image src="/ekedc.png" width={150} height={150} priority/>
-            <Image src="/eedc.png" width={150} height={150} priority/>
-            <Image src="/yedc.png" width={150} height={150} priority/>
-            <Image src="/aedc.png" width={150} height={150} priority/>
-            <Image src="/kedco.png" width={150} height={150} priority/>
-            <Image src="/joe.png" width={150} height={150} priority/>
-            <Image src="/kaduna.png" width={150} height={150} priority/>
-            <Image src="/ibedc.png" width={150} height={150} priority/>
-            <Image src="/bedc.png" width={150} height={150} priority/>
-            <Image src="/phcc.png" width={150} height={150} priority/>
+            <img src="/ikeja.png" width={150} height={150} priority/>
+            <img src="/ekedc.png" width={150} height={150} priority/>
+            <img src="/eedc.png" width={150} height={150} priority/>
+            <img src="/yedc.png" width={150} height={150} priority/>
+            <img src="/aedc.png" width={150} height={150} priority/>
+            <img src="/kedco.png" width={150} height={150} priority/>
+            <img src="/joe.png" width={150} height={150} priority/>
+            <img src="/kaduna.png" width={150} height={150} priority/>
+            <img src="/ibedc.png" width={150} height={150} priority/>
+            <img src="/bedc.png" width={150} height={150} priority/>
+            <img src="/phcc.png" width={150} height={150} priority/>
         </div>:""}
 
 
