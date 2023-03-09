@@ -16,7 +16,7 @@ function Main() {
     const [agent, setAgent] = useState([])
 
 
-    const username = typeof window !== 'undefined' ?localStorage.getItem("userName") : null
+    const username = typeof window !== 'undefined' ? localStorage.getItem("userName") : null
     const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null
 
 

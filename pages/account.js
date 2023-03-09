@@ -26,33 +26,33 @@ function account() {
   const [data, setData] = useState()
   const [agentdata, setAgentdata] = useState([])
 
-  // const username = typeof window !== 'undefined' ? localStorage.getItem("userName")  : null
-  // const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null
+  const username = typeof window !== 'undefined' ? localStorage.getItem("userName")  : null
+  const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null
   // console.log('logo',logo)
 
   
-//  const config = {
-//     headers:{
-//       Authorization: `Bearer ${token}`
-//     }
-//   }
-//   useEffect(() => {
-//     Axios.get("http://89.38.135.41:9800/wallet/balance", config).then((response)=>{
-//       setData(response?.data)
-//     })
-//   }, [])
-// console.log(data)
+ const config = {
+    headers:{
+      Authorization: `Bearer ${token}`
+    }
+  }
+  useEffect(() => {
+    Axios.get("http://89.38.135.41:9800/wallet/balance", config).then((response)=>{
+      setData(response?.data)
+    })
+  }, [])
+console.log(data)
   
-// useEffect(() => {
-//   Axios.get("http://89.38.135.41:9800/manager/agents/all", config).then((response)=>{
-//     setAgentdata(response?.data?.getallagents)
-//   }) 
-// }, [])
-// console.log(allagents)
+useEffect(() => {
+  Axios.get("http://89.38.135.41:9800/manager/agents/all", config).then((response)=>{
+    setAgentdata(response?.data?.getallagents)
+  }) 
+}, [])
+console.log(allagents)
 
-//   useEffect(() => {
-//     Aos.init({ duration: 1000});
-//   }, []);
+  useEffect(() => {
+    Aos.init({ duration: 1000});
+  }, []);
 
 
   return (
@@ -81,7 +81,7 @@ function account() {
              <div className={style.line}></div>          
                   <Link href='profile'>< Image src="/profile.png" width={40} height={40} priority/></Link> 
              <div className={style.name}>
-                {/* <p style={{textTransform:"capitalize"}}>{username} <AiOutlineDown size={12}/></p> */}
+                <p style={{textTransform:"capitalize"}}>{username} <AiOutlineDown size={12}/></p>
                 <span>Agent Manager</span>
              </div>
           </div>  

@@ -1,11 +1,14 @@
 import React,{useState, useEffect} from 'react'
 import style from "../styles/new.module.css"
 import {AiFillCaretDown, AiOutlineClose} from "react-icons/ai"
-import Axios, { all } from "axios"
+import Axios from "axios"
 import Sidebar from './Sidebar'
 import ClipLoader from "react-spinners/ClipLoader";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import {toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 function New({handle}) {
       const [fullname, setFullname] = useState()
       const [phonenumber, setNumber] = useState()
@@ -18,9 +21,9 @@ function New({handle}) {
       const [email, setEmail] = useState()
       const [loading , setLoading] = useState(false)
       const [color, setColor]=useState("white")
-     
-     const token = JSON.parse(localStorage.getItem('token'))
-       
+            
+    const token = typeof window !== 'undefined' ? localStorage.getItem('token')  : null
+
       const details = {fullname,phonenumber,address,business_name,localgovt,state,region,email}
   
 
@@ -41,7 +44,6 @@ const getLcg = allstates?.data?.statelcd?.map(d => d[state] )
 
     async function submithandler(e){
       e.preventDefault();
-      // console.log(details)
       setLoading(true)
         const response = await fetch ("http://89.38.135.41:9800/manager/create/agent",{
           method:"POST",
@@ -55,11 +57,12 @@ const getLcg = allstates?.data?.statelcd?.map(d => d[state] )
         console.log(server)
         setLoading(false)
         handle(false)
+        toast(server?.errors)
         window.location="/agent"
      }
   
      useEffect(() => {
-      Aos.init({ duration: 1000 });
+      Aos.init({ duration: 500 });
     }, []);
 
   
@@ -79,7 +82,7 @@ const getLcg = allstates?.data?.statelcd?.map(d => d[state] )
                 </div>
                 <div className={style.name}>
                   <label>Phone Number (<span>*</span>Must be attached to your BVN)</label>
-                  <input type='text' placeholder='Enter your Phone Number linked to your BVN' onChange={(e) => setNumber(e.target.value)}/>
+                  <input type='number' placeholder='Enter your Phone Number linked to your BVN' onChange={(e) => setNumber(e.target.value)}/>
                 </div>
                 <div className={style.name}>
                   <label>Business Name <span>*</span></label>
@@ -87,7 +90,7 @@ const getLcg = allstates?.data?.statelcd?.map(d => d[state] )
                 </div>
                 <div className={style.name}>
                   <label>Email <span>*</span></label>
-                  <input type='text' placeholder='Enter your Government Issued ID' onChange={(e) => setEmail(e.target.value)}/>
+                  <input type='email' placeholder='Enter your Government Issued ID' onChange={(e) => setEmail(e.target.value)}/>
                 </div>
                 <div className={style.name}>
                   <label>Business Address <span>*</span></label>

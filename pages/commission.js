@@ -1,11 +1,28 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Sidebar from '../component/Sidebar'
 import style from "../styles/commission.module.css"
 import {AiOutlineSearch,AiOutlineDown,AiTwotoneBell,AiOutlineMenu} from "react-icons/ai"
 import  Image from 'next/image'
+import Axios from 'axios'
 import Link from 'next/link'
 import Setcommission from '../component/Setcommission'
 function setting() {
+
+    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null
+
+
+    const config = {
+        headers:{
+          Authorization: `Bearer ${token}`
+        }
+      }
+      
+      useEffect(() => {
+        Axios.get("http://89.38.135.41:9800/provider/airtime/networks", config).then((response)=>{
+          console.log(response?.data)
+        })
+        
+      }, [])
     const [airtime, setAirtime] = useState(true)
     const [electricity, setElectricity] = useState(false)
     // modal commission toggle

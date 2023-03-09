@@ -57,7 +57,8 @@
 }
 /* gray background */
 .bg{
-    background-color: whitesmoke;
+    background-color: #EFF0F6;
+    border-radius: 10px;
     padding: 30px;
 }
 .accounts{
@@ -81,7 +82,7 @@
 
 .flexout{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 20px;
 }
 .account{

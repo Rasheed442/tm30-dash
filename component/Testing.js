@@ -14,12 +14,11 @@ function testing() {
       {/* {typeof window !== 'undefined' && } */}
       
       {Dash.map((dash)=>{
-        return(   
-                   
-<>
+        return(    
+      <>
              <Link href={dash.path} className={router.pathname === dash.path ? style.top : ''}>
               <div className={style.head}>
-          <Image src={`/${dash.icon}`} width={15} height={15}/>
+          <img src={`/${dash.icon}`} width={15} height={15}/>
           <p>{dash.name}</p>   
            </div>
            </Link> 
@@ -36,7 +35,7 @@ function testing() {
                   </>
                 )
              })}
-           </div>}
+           </div> }
           </>
           // style={{color:router.pathname === dash.path ? "blue":""}}
           

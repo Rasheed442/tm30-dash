@@ -33,11 +33,11 @@ function Term2({check, data}) {
              {
               data && data?.map((d)=>{
                  return(
-                    <tbody>
-                         <tr >
-                         <td   onClick={()=>{
+                   
+                         <tr>
+                         <td onClick={()=>{
                            setClientId(d?._id);
-                           localStorage.setItem('d.id',JSON.stringify(d?._id))
+                           localStorage.setItem('d.id',d?._id)
                            check(true)
                          }} style={{textTransform:"capitalize", cursor:"pointer"}}>{d?.fullname}</td>
                         <td>{d?._id}</td>
@@ -52,7 +52,6 @@ function Term2({check, data}) {
                           </div>
                           </td>
                     </tr>
-                    </tbody>
                    
                  )
               })

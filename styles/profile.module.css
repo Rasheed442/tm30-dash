@@ -114,7 +114,7 @@
 .name{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 .name input{
     height: 40px;

@@ -4,7 +4,7 @@ import style from "../styles/profile.module.css"
 import {AiOutlineSearch,AiTwotoneBell,AiOutlineDown,AiTwotoneLock } from "react-icons/ai"
 import Image from 'next/image'
 function setting() {
-   const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
+   const username = typeof window !== 'undefined' ? localStorage.getItem("userName") : null
 
   return (
     <div className={style.background}>
@@ -29,8 +29,7 @@ function setting() {
          <div className={style.name}>
             <p style={{textTransform:"capitalize"}}>{username} <AiOutlineDown size={12}/></p>
             <span>Agent Manager</span>
-         </div>
-         
+         </div> 
       </div>
         </div>
          

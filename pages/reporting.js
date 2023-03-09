@@ -2,23 +2,24 @@ import React,{useState} from 'react'
 import Sidebar from '../component/Sidebar'
 import style from "../styles/reporting.module.css"
 import {AiTwotoneBell,AiOutlineDown,AiOutlineArrowRight} from "react-icons/ai"
+import disputes from "../pages/dispute.json"
 import Image from 'next/image'
 import Link from 'next/link'
 import { MdSearch } from 'react-icons/md'
 import { BsFilter,BsDownload } from 'react-icons/bs'
-// import disputes from "./dispute.json"
-import Table from '../component/Table'
 import Caution from '../component/Caution'
-import disputes from "../pages/dispute.json"
+import {TiArrowUnsorted} from "react-icons/ti"
+
 
 function dispute() {
    const [counter, setCounter] = useState(1)
    const [oneData, setOneData] = useState([])
-   const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
+   const username = typeof window !== 'undefined' ? localStorage.getItem("userName") : null
 
    const [show, setShow] = useState(false)
    console.log(oneData)
    console.log(show)
+   
   return (
     <div className={style.background}> 
       {show ? <Caution data={oneData} check={setShow}/>:""}
@@ -69,8 +70,52 @@ function dispute() {
           </div>
 
 
-    <Table 
-    />
+    {/* <Table 
+    /> */}
+
+
+<table className={style.table}>
+                      <thead>
+                            <tr>
+                               <th>AGENT NAME <TiArrowUnsorted size={12}/></th>
+                               <th>AGENT ID  <TiArrowUnsorted size={12}/></th>
+                               <th>PHONE NUMBER  <TiArrowUnsorted size={12}/></th>
+                               <th>AGENT BUSINESS NAME  <TiArrowUnsorted size={12}/></th>
+                               <th>AGENT EMAIL ADDRESS  <TiArrowUnsorted size={12}/></th>
+                               <th>TRANSACTION DISPUTES CONTENT  <TiArrowUnsorted size={12}/></th>
+                               <th>ACTION  <TiArrowUnsorted size={12}/></th>
+                               <th>RESOLVED STATUS  <TiArrowUnsorted size={12}/></th>
+                         </tr>   
+                        </thead>
+                      
+                         {
+                          disputes.map((d)=>{
+                             return(
+                                <tbody>
+                                     <tr>
+                                    <td>{d.name}</td>
+                                    <td>{d.id}</td>
+                                    <td>{d.number}</td>
+                                    <td>{d.business_name}</td>
+                                    <td>{d.agent_email}</td>
+                                    <td>{d.transaction_dispute}</td>
+                                    <td style={{color:"blue",cursor:"pointer"}}>{d.action}</td>
+
+                                    <td style={{width:"100%",margin:"5px",display:"inline-flex",borderRadius:"5px",
+                                    justifyContent:"center",alignItems:"center",backgroundColor:`${d.Resolved_Status === "RESOLVED" ? 
+                                    "#00F4001A" : (d.Resolved_Status === "OPENED") ? "#E0191933" : (d.Resolved_Status === "ESCALATED") 
+                                    ?  "orange" : 'green' }`, color: `${d.Resolved_Status === "RESOLVED"?"GREEN":
+                                     (d.Resolved_Status === "OPENED")?"RED":(d.Resolved_Status === "ESCALATED")?"white":""}`}}>{d.Resolved_Status}</td>
+
+                                </tr>
+                                </tbody>
+                               
+                             )
+                          })
+                         }
+                    </table>
+
+
         
         <div className={style.entries}>
           <p>Showing 1 to 50 of 100 entries</p>

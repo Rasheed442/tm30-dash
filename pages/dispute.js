@@ -9,12 +9,12 @@ import { MdSearch } from 'react-icons/md'
 import Table from '../component/Table'
 import Caution from '../component/Caution'
 import disputes from "../pages/dispute.json"
-
+import {username} from "../pages/utilis"
 function dispute() {
    const [counter, setCounter] = useState(1)
    const [oneData, setOneData] = useState([])
-   const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
-
+   const username = typeof window !== 'undefined' ? localStorage.getItem("userName") : null
+   
    const [show, setShow] = useState(false)
    console.log(oneData)
    console.log(show)

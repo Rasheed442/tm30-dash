@@ -13,9 +13,9 @@ function transactionlimit() {
      const [data, setData] = useState([])
      const [daily, setDaily] = useState()
 
-     const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : ""
-     const token = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('token')) : ""
-     const transactioncap = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("allow_set_transactioncap")) : ""
+     const username = typeof window !== 'undefined' ? localStorage.getItem("userName") : ""
+     const token = typeof window !== 'undefined' ? localStorage.getItem('token') : ""
+     const transactioncap = typeof window !== 'undefined' ? localStorage.getItem("allow_set_transactioncap") : ""
 
      const config = {
         headers:{

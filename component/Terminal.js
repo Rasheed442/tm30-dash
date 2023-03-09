@@ -24,7 +24,6 @@ function Terminal({back,nav}) {
  }
  useEffect(() => {
    Axios.get(`http://89.38.135.41:9800/user/agents/details?id=${clientId}`, config).then((response)=>{
-   //   console.log(response?.data)
      setClients(response?.data)
    })
    

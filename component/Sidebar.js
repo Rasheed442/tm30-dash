@@ -15,12 +15,10 @@ function Sidebar({change}) {
   return (
  <div className={style.container}>
 
-     
       <div className={style.header}>
         <Testing/>
         </div>
-      
-
+    
   <div className={style.exit1} onClick={() => {navigator.clipboard.writeText(referralcode), toast.info("copied")}}>
       <div className={style.profile}>
       <h4>My Referral Code</h4>

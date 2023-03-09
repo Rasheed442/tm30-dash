@@ -14,7 +14,7 @@ import disputes from "../pages/dispute.json"
 function dispute() {
    const [counter, setCounter] = useState(1)
    const [oneData, setOneData] = useState([])
-   const username = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userName"))  : null
+   const username = typeof window !== 'undefined' ? localStorage.getItem("userName")  : null
 
    const [show, setShow] = useState(false)
    console.log(oneData)
